@@ -42,6 +42,9 @@ GEM
       activesupport (>= 3.2)
       request_store (~> 1.0)
       scrypt (~> 1.2)
+    bcrypt (3.1.10-x86-mingw32)
+    bcrypt-ruby (3.1.5-x86-mingw32)
+      bcrypt (>= 3.1.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
@@ -62,7 +65,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.10.0)
+    coffee-script-source (1.8.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -165,10 +168,14 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt
+  bcrypt-ruby (= 3.1.5)
   bootstrap-sass (= 3.3.1.0)
   bootstrap-will_paginate
   casein (= 5.1.1.3)
   coffee-rails (~> 4.1.0)
+  coffee-script-source (= 1.8.0)
+  execjs
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.0)

@@ -12,12 +12,15 @@ gem 'casein', '5.1.1.3'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'bcrypt'
+gem 'bcrypt-ruby', '3.1.5'
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-script-source', '1.8.0' 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -38,6 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'execjs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
