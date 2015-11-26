@@ -7,8 +7,11 @@ gem 'rails', '4.2.0'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '3.3.1.0'
-
+#CMS
 gem 'casein', '5.1.1.3'
+#Captcha tool
+gem 'negative_captcha', '0.4.0'
+
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
@@ -42,6 +45,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'execjs'
+
+gem 'puma', '2.15.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
