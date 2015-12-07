@@ -3,7 +3,13 @@
 one:
   name: MyString
   contact_info: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  admin: false
 
 two:
   name: MyString
   contact_info: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  admin: false
