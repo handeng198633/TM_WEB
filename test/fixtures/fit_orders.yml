@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 1
+  group_number: MyString
+  outdate: 2015-12-07 16:04:38
+  returndate: 2015-12-07 16:04:38
+  bookinfo: MyString
+  info: MyText
+  persons_list: MyString
+  comeinfo: MyText
+  goinfo: MyText
+  price1: 1
+  price2: 1
+  price3: 1
+  price4: 1
+  customers_info: MyText
+  tip: MyString
+  recipient: MyString
+  current_collction: 1
+  status: MyString
+
+two:
+  order_id: 1
+  group_number: MyString
+  outdate: 2015-12-07 16:04:38
+  returndate: 2015-12-07 16:04:38
+  bookinfo: MyString
+  info: MyText
+  persons_list: MyString
+  comeinfo: MyText
+  goinfo: MyText
+  price1: 1
+  price2: 1
+  price3: 1
+  price4: 1
+  customers_info: MyText
+  tip: MyString
+  recipient: MyString
+  current_collction: 1
+  status: MyString

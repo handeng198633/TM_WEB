@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
+  get 'line_lists/index'
+
+  get 'line_lists/new'
+
+  get 'package_orders/index'
+
+  get 'package_orders/new'
+
+  get 'fit_orders/index'
+
+  get 'fit_orders/new'
+
   get 'sessions/new'
 
   get 'users/new'
 
   root 'static_pages#home'
-  get 'static_pages/home'
-  get 'admin'    => 'static_pages#admin'
   get 'signup'   => 'users#new'
   get 'login'    => 'sessions#new'
   post 'login'   => 'sessions#create'

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  line_id: 1
+  group_number: MyString
+  day: 1
+  linename: MyString
+  line_info: MyString
+  travel_content: MyText
+  picture_id: 1
+  document_id: 1
+  price: MyString
+  record_person: MyString
+  selling_ornot: MyString
+
+two:
+  line_id: 1
+  group_number: MyString
+  day: 1
+  linename: MyString
+  line_info: MyString
+  travel_content: MyText
+  picture_id: 1
+  document_id: 1
+  price: MyString
+  record_person: MyString
+  selling_ornot: MyString
