@@ -13,11 +13,12 @@ class FitOrdersController < ApplicationController
   	end
 
   	def create
-  		
+  		@fit_order = FitOrder.new(fit_order_params)
+  		@fit_order.save
   	end
 
   	def destroy
-  		
+  		FitOrder.find(params[:order_id]).destroy
   	end
 
   	private

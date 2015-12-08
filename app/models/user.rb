@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token
 
+	has_many :fit_orders, dependent: :destroy
+	has_many :package_orders, dependent: :destroy
+
 	validates :name, presence: true, uniqueness: { case_sensitive: false, message:" 该用户名已存在！" }, length: { maximum: 15 }
 	validates :contact_info, presence: true, allow_blank: true, length: { maximum: 50 }
 
