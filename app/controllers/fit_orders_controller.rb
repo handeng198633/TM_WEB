@@ -14,7 +14,11 @@ class FitOrdersController < ApplicationController
 
   	def create
   		@fit_order = FitOrder.new(fit_order_params)
-  		@fit_order.save
+  		if @fit_order.save
+  			redirect_to fit_orders_path
+  		else
+  			render 'new'	
+  		end
   	end
 
   	def destroy

@@ -14,7 +14,11 @@ class LineListsController < ApplicationController
 
   	def create
   		@line_list = LineList.new(line_list_params)
-  		@line_list.save	
+  		if @line_list.save
+  			redirect_to line_lists_path
+  		else
+  			render 'new'	
+  		end
   	end
 
   	def destroy

@@ -14,7 +14,11 @@ class PackageOrdersController < ApplicationController
 
   	def create
   		@package_order = PackageOrder.new(package_order_params)
-  		@package_order.save
+  		if @package_order.save
+  			redirect_to package_orders_path
+  		else
+  			render 'new'	
+  		end
   	end
 
   	def destroy

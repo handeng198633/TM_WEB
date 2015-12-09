@@ -1,8 +1,8 @@
 class PackageOrder < ActiveRecord::Base
-	  belongs_to :user
-	  default_scope -> { order('created_at DESC') }
+	belongs_to :user
+	default_scope -> { order('created_at DESC') }
 
-	  validates :group_number, presence: true, allow_blank: true
+	validates :group_number, presence: true, allow_blank: true
       validates :outdate, presence: true, allow_blank: true
       validates :returndate, presence: true, allow_blank: true
       validates :travel_agency, presence: true, allow_blank: true
