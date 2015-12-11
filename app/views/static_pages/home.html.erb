@@ -1,2 +1,306 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jsbn.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/prng4.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/rng.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/rsa.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/base64.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/m.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jquery-1.11.1.min.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jquery-migrate-1.2.1.js"></script>
+
+
+<title>忆游假期</title>
+
+<link media="screen" type="text/css" href="./resources/reset.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/index.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/uploadify.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/easyui.css" rel="stylesheet">
+
+
+<script charset="UTF-8" type="text/javascript">var webContext = {"base": "", "resourcesbase": "/resources/", "success": "SUCCESS", "error": "ERROR"};</script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery-1.11.1.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery.easyui.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery-migrate-1.2.1.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/handlebars-1.0.0.beta.6.js"></script> 
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery.uploadify.js"></script>
+
+<script charset="UTF-8" type="text/javascript" src="./resources/handlebars-1.0.0.beta.6.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/functions.js"></script> 
+<script id="dialog-message" type="text/x-handlebars-template">
+<div class="body box-b"> 
+     <div class="icon">
+      {{# if info }}
+      <i class="info"></i>
+      {{/ if }}
+      {{# if success }}
+      <i class="success"></i>
+      {{/ if }}
+      {{# if warning }}
+      <i class="warning"></i>
+      {{/ if }}
+      {{# if error }}
+      <i class="error"></i>
+      {{/ if }}
+    </div>
+    <div class="context">
+      {{# if title }}
+      <h3>{{ title }}</h3>
+      {{/ if }}
+      <br><p class="text">{{{ message }}}</p>
+      {{# if link }}
+      <p><a href="{{ link }}">{{ linkText }}</a></p>
+      {{/ if }}
+    </div> <br>
+  <div class="option">
+    {{# if button }}<a onclick="dialog_hide()" class="fl close2" href="{{ button.link }}">{{ button.text }}{{/ if }}</a>
+    {{# if button1 }}<a onclick="dialog_hide()" class="fl close2" href="{{ button1.link }}">{{ button1.text }}{{/ if }}</a>
+    {{#if noclose}}&nbsp;{{else}}<a class="fl close2" onclick="dialog_hide()">关闭</a>{{/if}} 
+  </div>
+</div>
+</script>
+<script>
+var dialog_msg = {info:true,message:""},dialog_callback;
+var dialog_message = Handlebars.compile($("#dialog-message").html()); 
+var dialog_show = function(msg){var m=msg?msg:dialog_msg;var d=$('#ui-dialog-win');d.html(dialog_message(m));loadDialog('dialog-form-check')}
+var dialog_hide = function(){var d=$('#ui-dialog-win');d.hide();}
+var dialog_mark_show = function(h,o){$('.dialog-mark_content_cen').html(h);$('#dialog-mark_content_opt').html(o);$('.dialog-mark_content').css('display','block');$('.dialog-mark_overlay').css('display','block');}
+var dialog_mark_hide = function(){if(dialog_callback){dialog_callback()};$('.dialog-mark_content').css('display','none');$('.dialog-mark_overlay').css('display','none');}
+</script>  
+</head><body><div class="dialog-mark_content">
+	<a class="dialog-mark_close" href="javascript:dialog_mark_hide();" title="关闭">X</a>
+	<div class="dialog-mark_content_cen" style="height:450px;overflow:auto;"></div>
+	<div id="dialog-mark_content_opt"></div> 
+</div>
+<div class="dialog-mark_overlay">
+</div>
+
+
+<div class="nav">
+    <div class="m-div clear">
+        <a class="fl log">
+        <div class="fl menu" style="margin-left: 120px;">
+            <a href="./home.html.erb" class="fl menu-btn menu-btn-fire">忆游假日在线管理CMS</a>
+            
+            <div class="menu-drop">
+                <a class="close" href="./resources/home.html.erb
+home.html.erb"></a>
+                <a class="btn" href="./resources/关于忆游假期.htm">公司简介</a>
+              
+               
+                <div class="tips">关于忆游假期</div>
+            </div>
+        </div>
+        <div id="user-static-info-div" class="fr menu2">	<a class="fl menu-btn menu-btn-fire border-radius-2" href="./register.htm">快速注册</a>
+	<a class="fl menu-btn" href="./home.html.erb
+home.html.erb">登录</a>
+	<!--<a class="fl menu-btn" href="#">消息</a>-->
+	
+	<script type="text/javascript" style="display:none;"> 
+	$("#login-btn").click(function(event) {
+		event.preventDefault();
+
+		var $username = $("#username");
+		var $password = $("#password");
+		if (0 == $.trim($username.val()).length ||　0 == $.trim($password.val()).length)　{ 
+			dialog_show({error:true,message:"请输入帐户名和密码！"});
+		} else {
+			$("#login-form").submit();
+		}
+		
+		return false;
+	});
+</script>
+
+            <script type="text/javascript">
+				$.ajax({
+					url: ("/static/userinfo.html"),
+					type: "get",
+					cache: false,
+					dataType: "html",
+					data: {},
+					success: function(result) {
+						$("#user-static-info-div").prepend(result); 
+					},
+					error: function() {}
+			    });
+			    
+			</script>
+        </div>
+    </div>
+</div>
+	<div class="home-box1">
+	    <div class="banner home-banner">
+	        <div class="banner-wp" style="width: 4033px; left: -1341px;">
+	            <div class="slide" style="width: 1341px; background-image: url(resources/bn1.jpg);"></div>
+	            <div class="slide" style="width: 1341px; background-image: url(resources/bn2.jpg);"></div>
+	            <div class="slide" style="width: 1341px; background-image: url(resources/bn3.jpg);"></div>
+	        </div>
+	        <div class="btns">
+	            <a href="home.html.erb
+home.html.erb" class="btn" data-i="0"></a>
+	            <a href="home.html.erb
+home.html.erb" class="btn btn-fire" data-i="1"></a>
+	            <a href="home.html.erb
+home.html.erb" class="btn" data-i="2"></a>
+	        </div>
+	    </div>
+	
+	    <div class="m-div clear">
+	        <div class="fl">
+	            <span class="home-banner-txt home-banner-txt1" style="display: none;"></span>
+	            <span class="home-banner-txt home-banner-txt2" style="display: none; opacity: 1;"></span>
+	            <span class="home-banner-txt home-banner-txt3" style="display: none;"></span>
+	        </div>
+	        <div id="login-form-div" class="fr">
+	            <div class="home-login">
+	                <div class="bg"></div>
+	                <div class="body">
+	                <form id="login-form" action="/home.html.erb
+home.html.erb" method="post">
+	                    <div class="title">忆游登录
+	                        <span>
+                              <b style="color:red;">用户名或密码错误</b>
+                            </span>
+                        </div>
+	                    <div class="input-line"><i class="icon-login"></i><input type="text" id="username" name="username" placeholder="用户名"></div>
+	                    <div class="input-line"><i class="icon-password"></i><input onfocus="javascript:this.value=&#39;&#39;;" onchange="doEncrypt(this);" id="password" name="password" type="password" placeholder="密码"></div>
+	                    <div class="clear link-line">
+	                        <label class="fl"
+	                        	<br />如忘记密码请跟管理员联系</label>
+	                        <a href="" class="fl a-fire"></a>
+	                        <a href="" class="fr"></a>>
+	                    </div>
+
+	                    <a id="login-btn" class="login-btn" href="#">登录</a>
+	                    <div class="t-c">
+	                    <a  class="reg-btn" href="home.html.erb
+home.html.erb"></a>
+	                    </div>
+					</form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="home-box2">
+	    <div class="m-div clear">
+	
+	        <a href="" class="block block1 fl">
+	            <img src="./resources/home-icon-block1.png" class="i">
+	            <div class="title1">销售部门</div>
+	            <div class="title2">供销售上传登记订单</div>
+	        </a>
+	
+	        <a href="" class="block block2 fl">
+	
+	            <img src="./resources/home-icon-block2.png" class="i">
+	            <div class="title1">票务部门</div>
+	            <div class="title2">登记线路上传记录</div>
+	
+	        </a>
+	        <a href="" class="block block3 fl">
+	            <img src="./resources/home-icon-block3.png" class="i">
+	            <div class="title1">财务部门</div>
+	            <div class="title2">供会计统计账目明细</div>
+	        </a>
+	    </div>
+	</div>
+	
+	<div class="home-box3">
+	    <div class="banner home-banner2">
+	        <div class="banner-wp" style="width: 5364px; left: -2682px;">
+	            <div class="slide clear" style="width: 1341px;">
+	                <div class="m-div clear">
+	                    <div class="fl">
+	                        <div class="title">企业文化</div>
+	                        <div class="desc">
+	                            <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
+	                            </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
+	                            </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
+	                            </p><p>从市场中来，到市场中去。
+	                 
+	                        </p></div>
+	                    </div>
+	                    <div class="fr">
+	                        <img src="./resources/b-banner-img.png">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="slide clear" style="width: 1341px;">
+	                <div class="m-div clear">
+	                    <div class="fl">
+	                        <div class="title">企业文化</div>
+	                        <div class="desc">
+	                            <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
+	                            </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
+	                            </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
+	                            </p><p>从市场中来，到市场中去。
+	                    
+	                        </p></div>
+	                    </div>
+	                    <div class="fr">
+	                        <img src="./resources/b-banner-img.png">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="slide clear" style="width: 1341px;">
+	                <div class="m-div clear">
+	                    <div class="fl">
+	                        <div class="title">企业文化</div>
+	                        <div class="desc">
+	                            <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
+	                            </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
+	                            </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
+	                            </p><p>从市场中来，到市场中去。
+	
+	                        </p></div>
+	                    </div>
+	                    <div class="fr">
+	                        <img src="./resources/b-banner-img.png">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="slide clear" style="width: 1341px;">
+	                <div class="m-div clear">
+	                    <div class="fl">
+	                        <div class="title">企业文化</div>
+	                        <div class="desc">
+	                            <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
+	                            </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
+	                            </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
+	                            </p><p>从市场中来，到市场中去。
+	          
+	                        </p></div>
+	                    </div>
+	                    <div class="fr">
+	                        <img src="./resources/b-banner-img.png">
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="btns">
+	            <div class="m-div">
+	            <a href="#" class="l-btn"></a>
+	            <a href="#" class="r-btn"></a>
+	            </div>
+	        </div>
+	    </div>
+	
+	</div>
+
+<div class="footer">
+    <div class="m-div">
+        <div class="clear">
+        
+        <div class="copyright">
+            版权所有 © 2015-2016 忆游假期  并保留所有权利   Copyright ChengDu . ALL Rights Reserved
+        </div>
+    </div>
+</div>
+<a class="up2top" href="#" style="display: inline;"></a>
+<div id="ui-dialog-win" class="dialog-div dialog-mini dialog-form-check"></div>
+<script src="resources/m.js"></script>
+
+
+</body></html>

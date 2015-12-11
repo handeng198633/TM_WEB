@@ -13,10 +13,15 @@
  *= require_tree .
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
+
+ * head css
+ *= require head/reset
+ *= require head/index
+ *= require head/uploadify
+ *= require head/easyui
  */
 
  /*
- *= require jquery.ui.core
- *= require jquery.ui.theme
  *= require dataTables/src/demo_table_jui
 */
+

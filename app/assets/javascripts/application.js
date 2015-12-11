@@ -17,3 +17,13 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+// head js
+//= require head/jsbn
+//= require head/prng4
+//= require head/rng
+//= require head/rsa
+//= require head/base64
+//= require head/m
+//= require head/jquery-1.11.1.min
+//= require head/jquery-migrate-1.2.1

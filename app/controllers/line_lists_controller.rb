@@ -46,4 +46,5 @@ class LineListsController < ApplicationController
 	    def admin_user
 	      redirect_to{roo_url} unless current_user.admin?
 	    end
+	end
 end

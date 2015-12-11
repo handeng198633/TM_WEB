@@ -35,6 +35,14 @@ module SessionsHelper
 		@current_user = nil
 	end
 
+	def signed_in_user
+        unless logged_in?
+            store_location
+            redirect_to login_url
+            flash[:notice] = "请先登录！"
+        end
+    end
+
 	def forget(user)
 		user.forget
 		cookies.delete(:user_id)
