@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jsbn.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/prng4.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/rng.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/rsa.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/base64.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/m.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jquery-migrate-1.2.1.js"></script>
+
+    <title>忆游假期在线CMS | <%= yield(:title) %></title>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+	<script charset="UTF-8" type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+	<script charset="UTF-8" type="text/javascript" src="/assets/jquery.easyui.min.js"></script>
+	<script charset="UTF-8" type="text/javascript" src="/assets/jquery-migrate-1.2.1.js"></script>
+	<script charset="UTF-8" type="text/javascript" src="/assets/handlebars-1.0.0.beta.6.js"></script> 
+	<script charset="UTF-8" type="text/javascript" src="/assets/jquery.uploadify.js"></script>
+
+	<script charset="UTF-8" type="text/javascript" src="/assets/handlebars-1.0.0.beta.6.js"></script>
+	<script charset="UTF-8" type="text/javascript" src="/assets/functions.js"></script> 
+
 </head>
 <body>
-<!--	<%= render 'layouts/header' %>
+	<%= render 'layouts/header' %>
 	<div class="container">
 		<% flash.each do |key, value| %>
 		<div class="alert alert-<%= key %>"><%= value %></div>
 		<% end %>
-		<%= yield %>
-		<%= render 'layouts/footer' %>
-		<%= debug(params) if Rails.env.development? %>
 	</div>
--->
+	<%= yield %>
+	<%= debug(params) if Rails.env.development? %>
+	<%= render 'layouts/footer' %>
 </body>
 </html>

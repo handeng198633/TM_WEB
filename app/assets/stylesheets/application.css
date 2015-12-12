@@ -15,10 +15,10 @@
  *= require_self
 
  * head css
- *= require head/reset
- *= require head/index
- *= require head/uploadify
- *= require head/easyui
+ *= require reset
+ *= require index
+ *= require uploadify
+ *= require easyui
  */
 
  /*
