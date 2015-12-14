@@ -1,6 +1,6 @@
 class FitOrdersController < ApplicationController
-	before_action :signed_in_user, only: [:index, :create, :update, :new, :show]
-	before_action :admin_user, only: :destroy
+#	before_action :signed_in_user, only: [:index, :create, :update, :new, :show]
+#	before_action :admin_user, only: :destroy
 
 	def index
   		respond_to do |format|

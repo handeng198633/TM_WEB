@@ -1,2 +1,28 @@
-<h1>LineLists#index</h1>
-<p>Find me in app/views/line_lists/index.html.erb</p>
+<% provide(:title, "旅游线路") %>
+<h1>旅游线路</h1>
+
+<table id="lit_lists" class="display" data-source="<%= line_lists_url(format: "json") %>">
+  <thead>
+    <tr>
+      <th>订单编号</th>
+      <th>团号</th>
+      <th>出发日期</th>
+      <th>地接日期</th>
+      <th>订购方</th>
+      <th>出团通知</th>
+      <th>人数[名单]</th>
+      <th>接</th>
+      <th>送</th>
+      <th>收客价/地接价</th>
+      <th>西藏结算价/当地成本</th>
+      <th>客人信息</th>
+      <th>备注</th>
+      <th>接受人</th>
+      <th>当前已收款</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

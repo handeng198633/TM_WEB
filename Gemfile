@@ -40,7 +40,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #search tables
 gem 'jquery-datatables-rails', '~> 3.3.0'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '5.0.5'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
