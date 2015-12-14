@@ -25,7 +25,7 @@ module SessionsHelper
 		user == current_user
 	end
 
-	def logged_in？
+	def logged_in?
 		!current_user.nil?
 	end
 
@@ -39,7 +39,7 @@ module SessionsHelper
         unless logged_in?
             store_location
             redirect_to login_url
-            flash[:notice] = "请先登录！"
+            flash[:notice] = "请先登录!"
         end
     end
 

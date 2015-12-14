@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   		redirect_to root_url
 #     redirect_back_or user
   	else
-  		flash[:danger] = 'Invalid email/password combination'
+  		flash[:error] = '用户名/密码错误！'
   		render 'new'
   	end
   end

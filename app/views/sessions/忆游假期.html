@@ -1,9 +1,72 @@
-<!DOCTYPE html>
 
-<html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jsbn.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/prng4.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/rng.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/rsa.js"></script>
+	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/base64.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/m.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jquery-1.11.1.min.js"></script>
+    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="resources/jquery-migrate-1.2.1.js"></script>
 
-	<body>
-	<div class="dialog-mark_content">
+
+<title>忆游假期在线CMS</title>
+
+<link media="screen" type="text/css" href="./resources/reset.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/index.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/uploadify.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./resources/easyui.css" rel="stylesheet">
+
+
+<script charset="UTF-8" type="text/javascript">var webContext = {"base": "", "resourcesbase": "/resources/", "success": "SUCCESS", "error": "ERROR"};</script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery-1.11.1.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery.easyui.min.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery-migrate-1.2.1.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/handlebars-1.0.0.beta.6.js"></script> 
+<script charset="UTF-8" type="text/javascript" src="./resources/jquery.uploadify.js"></script>
+
+<script charset="UTF-8" type="text/javascript" src="./resources/handlebars-1.0.0.beta.6.js"></script>
+<script charset="UTF-8" type="text/javascript" src="./resources/functions.js"></script> 
+<script id="dialog-message" type="text/x-handlebars-template">
+<div class="body box-b"> 
+     <div class="icon">
+      {{# if info }}
+      <i class="info"></i>
+      {{/ if }}
+      {{# if success }}
+      <i class="success"></i>
+      {{/ if }}
+      {{# if warning }}
+      <i class="warning"></i>
+      {{/ if }}
+      {{# if error }}
+      <i class="error"></i>
+      {{/ if }}
+    </div>
+    <div class="context">
+      {{# if title }}
+      <h3>{{ title }}</h3>
+      {{/ if }}
+      <br><p class="text">{{{ message }}}</p>
+      {{# if link }}
+      <p><a href="{{ link }}">{{ linkText }}</a></p>
+      {{/ if }}
+    </div> <br>
+  <div class="option">
+    {{# if button }}<a onclick="dialog_hide()" class="fl close2" href="{{ button.link }}">{{ button.text }}{{/ if }}</a>
+    {{# if button1 }}<a onclick="dialog_hide()" class="fl close2" href="{{ button1.link }}">{{ button1.text }}{{/ if }}</a>
+    {{#if noclose}}&nbsp;{{else}}<a class="fl close2" onclick="dialog_hide()">关闭</a>{{/if}} 
+  </div>
+</div>
+</script>
+<script>
+var dialog_msg = {info:true,message:""},dialog_callback;
+var dialog_message = Handlebars.compile($("#dialog-message").html()); 
+var dialog_show = function(msg){var m=msg?msg:dialog_msg;var d=$('#ui-dialog-win');d.html(dialog_message(m));loadDialog('dialog-form-check')}
+var dialog_hide = function(){var d=$('#ui-dialog-win');d.hide();}
+var dialog_mark_show = function(h,o){$('.dialog-mark_content_cen').html(h);$('#dialog-mark_content_opt').html(o);$('.dialog-mark_content').css('display','block');$('.dialog-mark_overlay').css('display','block');}
+var dialog_mark_hide = function(){if(dialog_callback){dialog_callback()};$('.dialog-mark_content').css('display','none');$('.dialog-mark_overlay').css('display','none');}
+</script>  
+</head><body><div class="dialog-mark_content">
 	<a class="dialog-mark_close" href="javascript:dialog_mark_hide();" title="关闭">X</a>
 	<div class="dialog-mark_content_cen" style="height:450px;overflow:auto;"></div>
 	<div id="dialog-mark_content_opt"></div> 
@@ -16,20 +79,18 @@
     <div class="m-div clear">
         <a class="fl log">
         <div class="fl menu" style="margin-left: 120px;">
-            <a href="./home.html.erb" class="fl menu-btn menu-btn-fire">忆游假日在线管理CMS</a>
+            <a href="./忆游假期.html" class="fl menu-btn menu-btn-fire">忆游假日在线CMS</a>
             
             <div class="menu-drop">
-                <a class="close" href="./resources/home.html.erb
-home.html.erb"></a>
-                <a class="btn" href="./resources/关于忆游假期.htm">公司简介</a>
+                <a class="close" href="./忆游假期.html"></a>
+                <a class="btn" href="">公司简介</a>
               
                
                 <div class="tips">关于忆游假期</div>
             </div>
         </div>
         <div id="user-static-info-div" class="fr menu2">	<a class="fl menu-btn menu-btn-fire border-radius-2" href="./register.htm">快速注册</a>
-	<a class="fl menu-btn" href="./home.html.erb
-home.html.erb">登录</a>
+	<a class="fl menu-btn" href="./忆游假期.html">登录</a>
 	<!--<a class="fl menu-btn" href="#">消息</a>-->
 	
 	<script type="text/javascript" style="display:none;"> 
@@ -73,12 +134,9 @@ home.html.erb">登录</a>
 	            <div class="slide" style="width: 1341px; background-image: url(resources/bn3.jpg);"></div>
 	        </div>
 	        <div class="btns">
-	            <a href="home.html.erb
-home.html.erb" class="btn" data-i="0"></a>
-	            <a href="home.html.erb
-home.html.erb" class="btn btn-fire" data-i="1"></a>
-	            <a href="home.html.erb
-home.html.erb" class="btn" data-i="2"></a>
+	            <a href="忆游假期.html" class="btn" data-i="0"></a>
+	            <a href="忆游假期.html" class="btn btn-fire" data-i="1"></a>
+	            <a href="忆游假期.html" class="btn" data-i="2"></a>
 	        </div>
 	    </div>
 	
@@ -92,8 +150,7 @@ home.html.erb" class="btn" data-i="2"></a>
 	            <div class="home-login">
 	                <div class="bg"></div>
 	                <div class="body">
-	                <form id="login-form" action="/home.html.erb
-home.html.erb" method="post">
+	                <form id="login-form" action="/忆游假期.html" method="post">
 	                    <div class="title">忆游登录
 	                        <span>
                               <b style="color:red;">用户名或密码错误</b>
@@ -110,8 +167,7 @@ home.html.erb" method="post">
 
 	                    <a id="login-btn" class="login-btn" href="#">登录</a>
 	                    <div class="t-c">
-	                    <a  class="reg-btn" href="home.html.erb
-home.html.erb"></a>
+	                    <a  class="reg-btn" href="忆游假期.html"></a>
 	                    </div>
 					</form>
 	                </div>
@@ -240,6 +296,4 @@ home.html.erb"></a>
 <script src="resources/m.js"></script>
 
 
- 
-</body>
-</html>
+</body></html>

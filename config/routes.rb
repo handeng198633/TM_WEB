@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  root 'static_pages#home'
+  root 'sessions#new'
   get 'signup'   => 'users#new'
   get 'login'    => 'sessions#new'
   post 'login'   => 'sessions#create'
