@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require prng4
 //= require jsbn
 //= require m
 //= require functions
@@ -17,7 +18,10 @@
 //= require rng
 //= require rsa
 //= require handlebars-1.0.0.beta.6
+//= require jquery-1.11.1.min
 //= require jquery-migrate-1.2.1
+//= require jquery.easyui.min
+//= require jquery.uploadify
 //= require jQuery
 //= require jquery
 //= require jquery_ujs

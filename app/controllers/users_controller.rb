@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   	if @user.save
 #      log_in @user
       flash[:success] = @user.name + '创建成功'
-      render 'new'
+      render 'index'
   	else
   		render 'new'
   	end
