@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
+  get 'users/edit'
+
   root 'sessions#new'
   get 'signup'   => 'users#new'
   get 'login'    => 'sessions#new'

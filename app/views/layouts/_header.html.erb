@@ -18,13 +18,7 @@
                 <% end %>
                 <div id="user-static-info-div" class="fr menu2">    
                     <a class="fl menu-btn menu-btn-fire border-radius-2" href="/signup">注册</a>
-                
-        <% elsif logged_in? %>
-                <% flash.each do |key, value| %>
-                        <div class="alert alert-<%= key %>"><%= value %></div>
-                <% end %>
-        <% end %>
-                    <li id="logo" class="dropdown fl menu-btn">
+                                        <li id="logo" class="dropdown fl menu-btn">
           
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户设置<b class="caret"></b>
                                 </a>
@@ -36,6 +30,24 @@
                                     </li>
                                 </ul>
                     </li>
+                
+        <% elsif logged_in? %>
+                <% flash.each do |key, value| %>
+                        <div class="alert alert-<%= key %>"><%= value %></div>
+                <% end %>
+                                    <li id="logo" class="dropdown fl menu-btn">
+          
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户设置<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "更新信息/密码", edit_user_path(current_user) %></li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <%= link_to "退出", logout_path, method: "delete" %>
+                                    </li>
+                                </ul>
+                    </li>
+        <% end %>
 
     </div>
 
