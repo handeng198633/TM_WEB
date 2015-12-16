@@ -1,6 +1,7 @@
 <% provide(:title, '主页') %>
-
+ 
 <% if logged_in? %>
+<div class="reg-page"></div>
   <div class="home-box2">
       <div class="m-div clear">
   
@@ -46,42 +47,44 @@
               <span class="home-banner-txt home-banner-txt2" style="display: none; opacity: 1;"></span>
               <span class="home-banner-txt home-banner-txt3" style="display: none;"></span>
           </div>
-          <div id="login-form-div" class="fr">
+
+           <div id="login-form-div" class="fr">
               <div class="home-login">
                   <div class="bg"></div>
                   <div class="body">
                     <div class="title">忆游登录
-                    </div>
-                    <% flash.each do |key, value| %>
+                      </div>
+                      <% flash.each do |key, value| %>
                         <div class="alert alert-<%= key %>"><%= value %></div>
-                    <% end %>
-                  <%= form_for(:session, url: login_path) do |f| %>
+                      <% end %>
+                      <%= form_for(:session, url: login_path) do |f| %>
 
-                      <%= f.text_field :name, class: 'form-control', placeholder: "用户名" %>
+                      <%= f.text_field :name, class: 'icon-login', placeholder: "用户名" %>
 
-                      <%= f.password_field :password, class: 'form-control', placeholder: "密码" %>
+                      <%= f.password_field :password, class: 'icon-password', placeholder: "密码" %>
 
                       <%= f.label :remember_me, class: "checkbox inline" do %>
                       <%= f.check_box :remember_me %>
                       <span>自动登录</span>
-                      <% end %>
-
-                      <%= f.submit "登录", class: "btn btn-danger" %>
-                  <% end %>
-
-                  <div class="clear link-line">
+                      <% end %> 
+                      <div class="clear link-line">
                           <label class="fl"
                             <br />如忘记密码请跟管理员联系</label>
-                          <a href="" class="fl a-fire"></a>
-                          <a href="" class="fr"></a>>
                       </div>
+
+                      <%= f.submit "登 录", class: "login-btn" %>
+                  <% end %>
+
+                
                   </div>
               </div>
           </div>
       </div>
   </div>
-  
+ 
   <div class="home-box3">
+    
+
       <div class="banner home-banner2">
           <div class="banner-wp" style="width: 5364px; left: -2682px;">
               <div class="slide clear" style="width: 1341px;">
@@ -162,4 +165,5 @@
       </div>
   
   </div>
+
 <% end %>
