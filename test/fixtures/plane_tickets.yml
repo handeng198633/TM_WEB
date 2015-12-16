@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  order_id: MyString
+  number: MyString
+  outdate: 2015-12-16 10:31:27
+  travel_content: MyString
+  combined_transport: MyString
+  place: MyString
+  person_name: MyString
+  person_idcard: MyString
+  valid_date: 2015-12-16 10:31:27
+  born_date: 2015-12-16 10:31:27
+  ticket_cost: MyString
+  counter_cost: MyString
+  plane: MyString
+  remark: MyString
+  record_person: MyString
+  record_remark: MyString
+  state: false
+  state_step: MyString
+
+two:
+  category: MyString
+  order_id: MyString
+  number: MyString
+  outdate: 2015-12-16 10:31:27
+  travel_content: MyString
+  combined_transport: MyString
+  place: MyString
+  person_name: MyString
+  person_idcard: MyString
+  valid_date: 2015-12-16 10:31:27
+  born_date: 2015-12-16 10:31:27
+  ticket_cost: MyString
+  counter_cost: MyString
+  plane: MyString
+  remark: MyString
+  record_person: MyString
+  record_remark: MyString
+  state: false
+  state_step: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month: MyString
+  total_income: MyString
+  total_coat: MyString
+  profit: MyString
+  fax: MyString
+  net_profit: MyString
+  status: false
+
+two:
+  month: MyString
+  total_income: MyString
+  total_coat: MyString
+  profit: MyString
+  fax: MyString
+  net_profit: MyString
+  status: false

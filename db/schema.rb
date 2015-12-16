@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207092830) do
+ActiveRecord::Schema.define(version: 20151216024424) do
+
+  create_table "finances", force: :cascade do |t|
+    t.datetime "out_date"
+    t.datetime "package_date"
+    t.string   "content"
+    t.string   "travel_agency"
+    t.integer  "person_number"
+    t.string   "price4_person"
+    t.integer  "should"
+    t.integer  "received"
+    t.integer  "balance"
+    t.string   "remark"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "finances", ["created_at"], name: "index_finances_on_created_at"
 
   create_table "fit_orders", force: :cascade do |t|
     t.integer  "order_id"
@@ -56,6 +73,20 @@ ActiveRecord::Schema.define(version: 20151207092830) do
 
   add_index "line_lists", ["line_id", "created_at"], name: "index_line_lists_on_line_id_and_created_at"
 
+  create_table "net_profits", force: :cascade do |t|
+    t.datetime "month"
+    t.string   "total_income"
+    t.string   "total_coat"
+    t.string   "profit"
+    t.string   "fax"
+    t.string   "net_profit"
+    t.boolean  "status",       default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "net_profits", ["month"], name: "index_net_profits_on_month", unique: true
+
   create_table "package_orders", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "group_number"
@@ -78,6 +109,79 @@ ActiveRecord::Schema.define(version: 20151207092830) do
   end
 
   add_index "package_orders", ["order_id", "created_at"], name: "index_package_orders_on_order_id_and_created_at"
+
+  create_table "plane_tickets", force: :cascade do |t|
+    t.string   "category"
+    t.string   "order_id"
+    t.string   "number"
+    t.datetime "outdate"
+    t.string   "travel_content"
+    t.string   "combined_transport"
+    t.string   "place"
+    t.string   "person_name"
+    t.string   "person_idcard"
+    t.datetime "valid_date"
+    t.datetime "born_date"
+    t.string   "ticket_cost"
+    t.string   "counter_cost"
+    t.string   "plane"
+    t.string   "remark"
+    t.string   "record_person"
+    t.string   "record_remark"
+    t.boolean  "state",              default: false
+    t.string   "state_step"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "plane_tickets", ["created_at"], name: "index_plane_tickets_on_created_at"
+
+  create_table "return_infos", force: :cascade do |t|
+    t.string   "category"
+    t.string   "content"
+    t.string   "remark"
+    t.boolean  "state",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "return_infos", ["created_at"], name: "index_return_infos_on_created_at"
+
+  create_table "train_tickets", force: :cascade do |t|
+    t.string   "category"
+    t.string   "order_id"
+    t.string   "number"
+    t.datetime "outdate"
+    t.string   "travel_content"
+    t.string   "combined_transport"
+    t.string   "place"
+    t.string   "person_name"
+    t.string   "person_idcard"
+    t.string   "ticket_cost"
+    t.string   "difficulty"
+    t.string   "seat1"
+    t.string   "seat2"
+    t.string   "remark"
+    t.string   "record_person"
+    t.string   "record_remark"
+    t.boolean  "state",              default: false
+    t.string   "state_step"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "train_tickets", ["created_at"], name: "index_train_tickets_on_created_at"
+
+  create_table "travel_infos", force: :cascade do |t|
+    t.string   "category"
+    t.string   "content"
+    t.string   "remark"
+    t.boolean  "state",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "travel_infos", ["created_at"], name: "index_travel_infos_on_created_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

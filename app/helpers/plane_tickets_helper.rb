@@ -1,0 +1,2 @@
+module PlaneTicketsHelper
+end

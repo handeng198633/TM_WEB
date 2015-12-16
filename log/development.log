@@ -38196,3 +38196,218 @@ ActionController::RoutingError (No route matches [GET] "/img/up.png"):
   Rendered d:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
   Rendered d:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
   Rendered d:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (53.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateNetProfits (20151216010814)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "net_profits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "month" datetime, "total_income" varchar, "total_coat" varchar, "profit" varchar, "fax" varchar, "net_profit" varchar, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE UNIQUE INDEX "index_net_profits_on_month" ON "net_profits" ("month")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151216010814"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTravelInfos (20151216013204)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTravelInfos (20151216013204)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "travel_infomations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "content" varchar, "remark" varchar, "state" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE  INDEX "index_travel_infos_on_category_and_created_at" ON "travel_infos" ("category", "created_at")[0m
+SQLite3::SQLException: no such table: main.travel_infos: CREATE  INDEX "index_travel_infos_on_category_and_created_at" ON "travel_infos" ("category", "created_at")
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateNetProfits (20151216010814)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_net_profits_on_month' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_net_profits_on_month' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mDROP INDEX "index_net_profits_on_month"[0m
+  [1m[35m (0.0ms)[0m  DROP TABLE "net_profits"
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20151216010814"]]
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fit_orders_on_order_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fit_orders_on_order_id_and_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_lists_on_line_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_lists_on_line_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_package_orders_on_order_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_package_orders_on_order_id_and_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_name' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateNetProfits (20151216010814)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "net_profits" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "month" datetime, "total_income" varchar, "total_coat" varchar, "profit" varchar, "fax" varchar, "net_profit" varchar, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE UNIQUE INDEX "index_net_profits_on_month" ON "net_profits" ("month")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151216010814"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTravelInfos (20151216013204)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (15.6ms)[0m  [1mCREATE TABLE "travel_infomations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "content" varchar, "remark" varchar, "state" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  CREATE  INDEX "index_travel_infos_on_created_at" ON "travel_infos" ("created_at")
+SQLite3::SQLException: no such table: main.travel_infos: CREATE  INDEX "index_travel_infos_on_created_at" ON "travel_infos" ("created_at")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTravelInfos (20151216013204)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "travel_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "content" varchar, "remark" varchar, "state" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE  INDEX "index_travel_infos_on_created_at" ON "travel_infos" ("created_at")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151216013204"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateReturnInfomations (20151216013522)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "return_infomations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "content" varchar, "remark" varchar, "state" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  CREATE  INDEX "index_travel_infomations_on_created_at" ON "travel_infomations" ("created_at")
+SQLite3::SQLException: no such table: main.travel_infomations: CREATE  INDEX "index_travel_infomations_on_created_at" ON "travel_infomations" ("created_at")
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReturnInfos (20151216013522)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "return_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "content" varchar, "remark" varchar, "state" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE  INDEX "index_return_infos_on_created_at" ON "return_infos" ("created_at")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151216013522"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTrainTickets (20151216015938)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "train_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "order_id" varchar, "number" varchar, "outdate" datetime, "travel_content" varchar, "combined_transport" varchar, "place" varchar, "person_name" varchar, "person_idcard" varchar, "ticket_cost" varchar, "difficulty" varchar, "seat1" varchar, "seat2" varchar, "remark" varchar, "record_person" varchar, "record_remark" varchar, "state" boolean DEFAULT 'f', "state_step" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  CREATE  INDEX "index_train_tickets_on_created_at" ON "train_tickets" ("created_at")
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151216015938"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Migrating to CreatePlaneTickets (20151216023126)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "plane_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "order_id" varchar, "number" varchar, "outdate" datetime, "travel_content" varchar, "combined_transport" varchar, "place" varchar, "person_name" varchar, "person_idcard" varchar, "valid_date" datetime, "born_date" datetime, "ticket_cost" varchar, "counter_cost" varchar, "plane" varchar, "remark" varchar, "record_person" varchar, "record_remark" varchar, "state" boolean DEFAULT 'f', "state_step" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_train_tickets_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_train_tickets_on_created_at' AND type='index'
+[0m
+  [1m[35m (15.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlaneTickets (20151216023126)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "plane_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "order_id" varchar, "number" varchar, "outdate" datetime, "travel_content" varchar, "combined_transport" varchar, "place" varchar, "person_name" varchar, "person_idcard" varchar, "valid_date" datetime, "born_date" datetime, "ticket_cost" varchar, "counter_cost" varchar, "plane" varchar, "remark" varchar, "record_person" varchar, "record_remark" varchar, "state" boolean DEFAULT 'f', "state_step" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE  INDEX "index_plane_tickets_on_created_at" ON "plane_tickets" ("created_at")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151216023126"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFinances (20151216024424)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "finances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "out_date" datetime, "package_date" datetime, "content" varchar, "travel_agency" varchar, "person_number" integer, "price4_person" varchar, "should" integer, "received" integer, "balance" integer, "remark" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  CREATE  INDEX "index_finances_on_created_at" ON "finances" ("created_at")
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151216024424"]]
+  [1m[35m (31.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_finances_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_finances_on_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fit_orders_on_order_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fit_orders_on_order_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_lists_on_line_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_lists_on_line_id_and_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_net_profits_on_month' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_net_profits_on_month' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_package_orders_on_order_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_package_orders_on_order_id_and_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_plane_tickets_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_plane_tickets_on_created_at' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_return_infos_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_return_infos_on_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_train_tickets_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_train_tickets_on_created_at' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_travel_infos_on_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_travel_infos_on_created_at' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_name' AND type='index'
+[0m
