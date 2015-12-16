@@ -102,7 +102,7 @@ a:hover,a.a-fire{color:#f23236; }
 .home-login .body .login-btn:hover{background:#239fff;}
 .home-login .body .reg-btn{display: inline-block;background: url(btn-reg.png);width:94px;height:18px;margin:0 auto;}
 
-.home-box2{padding:66px 0 105px 0;}
+.home-box2{padding:0px 0px 0px;}
 .home-box2 .m-div{overflow: hidden;}
 .home-box2 .m-div .block{margin:0 120px 0 90px;background: url(home-icon-block1-bg.png) left top no-repeat;width:152px;padding-top:190px;text-align: center;position: relative}
 .home-box2 .m-div .block2{background-image: url(home-icon-block2-bg.png)}
@@ -115,8 +115,8 @@ a:hover,a.a-fire{color:#f23236; }
 .home-box2 .m-div .block2 .i{width:58px;height:42px;top:55px;left:47px;}
 .home-box2 .m-div .block3 .i{width:75px;height:66px;top:43px;left:44px;}
 
-.home-box3{border-top:1px solid #e8e8e8;background: #f6f6f6;padding:40px 0 56px 0;height: 310px;position: relative;color:#0f0f0f;}
-.home-box3 .banner .btns .m-div{height: 310px;}
+.home-box3{border-top:1px solid #e8e8e8;background: #f6f6f6;padding:40px 0 56px 0;height: 360px;position: relative;color:#0f0f0f;}
+.home-box3 .banner.btns .m-div{height: 310px;}
 .home-box3 .banner{height:407px;}
 .home-box3 .banner-wp{height:310px;top:40px;}
 .home-box3 .slide .title{height: 95px;line-height: 95px;font-size: 36px;}
