@@ -40,6 +40,7 @@
               <a href="#" class="btn" data-i="2"></a>
           </div>
       </div>
+
   
       <div class="m-div clear">
           <div class="fl">
@@ -48,39 +49,36 @@
               <span class="home-banner-txt home-banner-txt3" style="display: none;"></span>
           </div>
 
-           <div id="login-form-div" class="fr">
+          <div id="login-form-div" class="fr">
               <div class="home-login">
                   <div class="bg"></div>
                   <div class="body">
-                    <div class="title">忆游登录
-                      </div>
+                    <div class="title">忆游登录</div>
                       <% flash.each do |key, value| %>
-                        <div class="alert alert-<%= key %>"><%= value %></div>
-                      <% end %>
-                      <%= form_for(:session, url: login_path) do |f| %>
+                         <div class="alert alert-<%= key %>"><%= value %></div>
+                         <% end %>
+                         <%= form_for(:session, url: login_path) do |f| %>
 
-                      <%= f.text_field :name, class: 'icon-login', placeholder: "用户名" %>
+                         <%= f.text_field :name, class: 'form-control', placeholder: "用户名" %>
 
-                      <%= f.password_field :password, class: 'icon-password', placeholder: "密码" %>
+                         <%= f.password_field :password, class: 'form-control', placeholder: "密码" %>
 
-                      <%= f.label :remember_me, class: "checkbox inline" do %>
-                      <%= f.check_box :remember_me %>
-                      <span>自动登录</span>
-                      <% end %> 
+                         <%= f.label :remember_me, class: "checkbox inline" do %>
+                         <%= f.check_box :remember_me %>
+                        <span>自动登录</span>
+                         <% end %> 
                       <div class="clear link-line">
                           <label class="fl"
                             <br />如忘记密码请跟管理员联系</label>
                       </div>
 
                       <%= f.submit "登 录", class: "login-btn" %>
-                  <% end %>
-
-                
+                      <% end %>
                   </div>
               </div>
           </div>
       </div>
-   </div>
+  </div>
  
   <div class="home-box2">
     <div class="m-div clear">
@@ -88,8 +86,8 @@
   </div>
 
   <div class="home-box3">
-      <div class="banner home-banner">
-          <div class="banner-wp" style="width: 5364px; left: -2682px;">
+      <div class="banner">
+          <div class="banner-wd">
               <div class="slide clear" style="width: 1341px;">
                   <div class="m-div clear">
                       <div class="fl">
@@ -107,67 +105,15 @@
                       </div>
                   </div>
               </div>
-              <div class="slide clear" style="width: 1341px;">
-                 <div class="m-div clear">
-                       <div class="fl">
-                          <div class="title">企业文化</div>
-                          <div class="desc">
-                              <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
-                              </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
-                              </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
-                              </p><p>从市场中来，到市场中去。
-                      
-                          </p></div>
-                        </div>
-                      <div class="fr">
-                          <img src="/assets/b-banner-img.png">
-                      </div>
-                  </div>
+                <div class="btns">
+            <div class="m-div">
+              
               </div>
-              <div class="slide clear" style="width: 1341px;">
-                  <div class="m-div clear">
-                      <div class="fl">
-                          <div class="title">企业文化</div>
-                          <div class="desc">
-                              <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
-                              </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
-                              </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
-                              </p><p>从市场中来，到市场中去。
-  
-                          </p></div>
-                      </div>
-                      <div class="fr">
-                          <img src="/assets/b-banner-img.png">
-                      </div>
-                  </div>
-              </div>
-              <div class="slide clear" style="width: 1341px;">
-                  <div class="m-div clear">
-                      <div class="fl">
-                          <div class="title">企业文化</div>
-                          <div class="desc">
-                              <p>忆游假期始终秉持“敬畏市场、服务市场”的准则，将“海纳百川、
-                              </p><p>汇聚天下”作为公司的基本文化，在提升市场竞争力的同时，
-                              </p><p>以兼容并包的主旨去研究并接纳行业不断出现的新事物，
-                              </p><p>从市场中来，到市场中去。
-            
-                          </p></div>
-                        </div>
-                      <div class="fr">
-                          <img src="/assets/b-banner-img.png">
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
-      
-          <div class="btns">
-              <div class="m-div">
-              <a href="#" class="l-btn"></a>
-              <a href="#" class="r-btn"></a>
-          </div>
+          
       </div>
   </div>
-</div>
 
           
 

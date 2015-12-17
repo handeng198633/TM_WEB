@@ -8,9 +8,9 @@ class PackageOrdersController < ApplicationController
     	format.json { render json: PackageOrdersDatatable.new(view_context) }
   	end
 
-	def new
-  		@package_order = PackageOrder.new
-  	end
+  	def new
+    		@package_order = PackageOrder.new
+    end
 
   	def create
   		@package_order = PackageOrder.new(package_order_params)

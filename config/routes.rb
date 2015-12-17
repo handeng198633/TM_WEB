@@ -1,45 +1,5 @@
 Rails.application.routes.draw do
-  get 'finances/index'
 
-  get 'finances/new'
-
-  get 'plane_tickets/index'
-
-  get 'plane_tickets/new'
-
-  get 'train_tickets/index'
-
-  get 'train_tickets/new'
-
-  get 'return_infos/index'
-
-  get 'return_infos/new'
-
-  get 'travel_infos/index'
-
-  get 'travel_infos/new'
-
-  get 'net_profits/index'
-
-  get 'net_profits/new'
-
-  get 'line_lists/index'
-
-  get 'line_lists/new'
-
-  get 'package_orders/index'
-
-  get 'package_orders/new'
-
-  get 'fit_orders/index'
-
-  get 'fit_orders/new'
-
-  get 'sessions/new'
-
-  get 'users/new'
-
-  get 'users/edit'
 
   root 'sessions#new'
   get 'signup'   => 'users#new'

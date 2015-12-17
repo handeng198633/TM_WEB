@@ -1,3 +1,22 @@
 <% provide(:title, "新增包团订单") %>
 <h1>订单信息</h1>
-<%= datetime_field(:package_order, :outdate) %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+		<%= form_for(PackageOrder.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :group_number, "团号" %>
+		   	<%= f.text_field :group_number, placeholder: "请输入团号。。。" %>
+		   	<%= f.label :outdate, "出发日期" %>
+		    <%= f.date_field :outdate %>
+
+		    <%= f.label :returndate, "地接日期" %>
+		    <%= f.date_field :returndate %>
+
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-large btn-primary" %>
+			<%= link_to "Back", package_orders_path, class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

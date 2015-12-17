@@ -115,18 +115,18 @@ a:hover,a.a-fire{color:#f23236; }
 .home-box2 .m-div .block2 .i{width:58px;height:42px;top:55px;left:47px;}
 .home-box2 .m-div .block3 .i{width:75px;height:66px;top:43px;left:44px;}
 
-.home-box3{border-top:1px solid #e8e8e8;background: #f6f6f6;padding:40px 0 56px 0;height: 360px;position: relative;color:#0f0f0f;}
-.home-box3 .banner.btns .m-div{height: 310px;}
-.home-box3 .banner{height:407px;}
-.home-box3 .banner-wp{height:310px;top:40px;}
+.home-box3{border-top:1px solid #e8e8e8;background: #f6f6f6;padding:40px 0 56px 0;height: 370px;position: relative;color:#0f0f0f;}
+.home-box3 .banner .btns .m-div{height: 310px;}
+.home-box3 .banner{height: 360px;}
+.home-box3 .banner-wd{height: 310px;top: 40px;}
 .home-box3 .slide .title{height: 95px;line-height: 95px;font-size: 36px;}
 .home-box3 .slide .desc{line-height: 28px;font-size: 15px;}
-.home-box3 .slide .fl{margin-left: 110px;}
-.home-box3 .slide .fr{margin-right: 95px;}
+.home-box3 .slide .fl{margin-left: 200px;margin-top: 35px;}
+.home-box3 .slide .fr
 .home-box3 .btns{bottom: auto;top:0;}
 .home-box3 .btns .m-div{position: relative;}
-.home-box3 .btns .l-btn,.home-box3 .btns .r-btn{background: url(home-banner-btn.png) left top;width:38px;height:38px;left:0;top:176px;bottom:auto;margin-top:-19px;position: absolute;}
-.home-box3 .btns .r-btn{background-position: right top;left:auto;right:0;}
+.home-box3 .btns .l-btn3,.home-box3 .btns3 .r-btn3{background: url(/assets/home-banner-btn.png) left top;width:38px;height:38px;left:0;top:176px;bottom:auto;margin-top:-19px;position: absolute;}
+.home-box3 .btns .r-btn3{background-position: right top;left:auto;right:0;}
 .footer{padding:32px 0 20px 0;background: #44a3ec;color:#fff}
 .footer a{color:#fff;}
 .footer a:hover{color:#f23236;}
