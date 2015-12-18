@@ -15,7 +15,7 @@ class CreatePackageOrders < ActiveRecord::Migration
       t.text :out_tracffic
       t.text :return_tracffic
       t.integer :cost
-      t.string :package_ornot
+      t.boolean :package_ornot, default: false
       t.string :sales
 
       t.timestamps null: false
