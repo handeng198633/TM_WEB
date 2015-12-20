@@ -6,6 +6,7 @@ class LineListsController < ApplicationController
   		respond_to do |format|
     	format.html
     	format.json { render json: LineListsDatatable.new(view_context) }
+    	end
   	end
 
 	def new

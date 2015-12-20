@@ -1,8 +1,10 @@
 <% provide(:title, "新增包团订单") %>
+
 <h1>订单信息</h1>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-4">
+
+		<div class="col-md-3 col-md-offset-3">
 		<%= form_for(PackageOrder.new) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 
@@ -45,7 +47,8 @@
 		   	<%= f.select(:package_ornot, [['是', true], ['否', false ]]) %>
 			
 			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-large btn-primary" %>
-			<%= link_to "退出", package_orders_path, class: "btn btn-large btn-primary" %>
+			<%= link_to "退出", package_orders_path, class: "btn btn-primary" %>
 		<% end %>
+
 	</div>
 </div>

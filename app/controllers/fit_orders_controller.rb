@@ -6,7 +6,8 @@ class FitOrdersController < ApplicationController
   		respond_to do |format|
     	format.html
     	format.json { render json: FitOrdersDatatable.new(view_context) }
-  	end
+  	  end
+  end
 
 	def new
   		@fit_order = FitOrder.new
