@@ -20,10 +20,23 @@ private
     fit_orders.map do |fit_order|
       [
         #table output
-        link_to(fit_order.name, fit_order),
-        h(fit_order.category),
-        h(fit_order.released_on.strftime("%B %e, %Y")),
-        number_to_currency(fit_order.price)
+        h(fit_order.id),
+        h(fit_order.group_number),
+        h(fit_order.outdate.strftime("%y/%m/%d")),
+        h(fit_order.returndate.strftime("%y/%m/%d")),
+        h(fit_order.bookinfo),
+        h(fit_order.info),
+        h(fit_order.person_list),
+        h(fit_order.comeinfo),
+        h(fit_order.goinfo),
+        number_to_currency(fit_order.price1) + ' | ' + number_to_currency(fit_order.price2),
+        number_to_currency(fit_order.price3) + ' | ' + number_to_currency(fit_order.price4),
+        h(fit_order.customers_info),
+        h(fit_order.tip),
+        link_to(current_user.name, current_user),        
+        number_to_currency(fit_order.current_collction),
+        h(fit_order.status),
+        link_to("编辑", edit_fit_order(fit_order))
       ]
     end
   end

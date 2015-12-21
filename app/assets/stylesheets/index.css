@@ -84,7 +84,7 @@ a:hover,a.a-fire{color:#f23236; }
     border-radius: 4px;
     behavior: url(inc/css/PIE.htc);
 }
-.home-login .body{position: relative;z-index: 2;width:278px;padding:28px;color:#fff;}
+.home-login .body{position: relative;z-index: 2;width:330px;padding:40px;color:#fff;}
 .home-login .body .title{font-size: 20px;margin-bottom: 20px;line-height: 20px;}
 .home-login .body .input-line{height:44px;line-height: 44px;margin-bottom: 13px;position: relative;padding-left:45px;font-size: 14px;}
 .home-login .body .input-line i{position: absolute;top:0;left:0;height:44px;width:45px;}

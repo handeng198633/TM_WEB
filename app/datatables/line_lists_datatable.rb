@@ -20,10 +20,17 @@ private
     line_lists.map do |line_list|
       [
         #table output
-        link_to(line_list.name, line_list),
-        h(line_list.category),
-        h(line_list.released_on.strftime("%B %e, %Y")),
-        number_to_currency(line_list.price)
+        h(line_list.id),
+        h(line_list.group_number),
+        number_to_currency(line_list.day),
+        h(line_list.linename) + ' | ' + h(line_list.line_info),
+        h(line_list.travel_content ),
+        h(line_list.picture_id),
+        h(line_list.document_id),
+        h(line_list.price),
+        link_to(current_user.name, current_user),
+        h(line_list.selling_ornot),
+        link_to("编辑", edit_line_list(line_list))
       ]
     end
   end
