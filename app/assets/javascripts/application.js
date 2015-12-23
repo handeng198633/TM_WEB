@@ -1,4 +1,6 @@
 // This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
 //
@@ -20,14 +22,12 @@
 //= require jquery-migrate-1.2.1
 //= require jquery.easyui.min
 //= require jquery.uploadify
+//= require jQuery
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require jquery-ui
 //= require bootstrap
 //= require turbolinks
-//= require jquery-ui
-//= require jquery-ui/core
-//= require jquery-ui/widget
-//= require jquery-ui/mouse
-//= require jquery-ui/position
-//= require package_orders
+//= require_tree .
