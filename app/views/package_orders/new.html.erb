@@ -33,11 +33,11 @@
 		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
 
 		   	<%= f.label :out_tracffic, "去大交通" %>
-		   	<%= f.select(:out_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<!--<%= f.select(:out_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>-->
 		   	<%= f.text_field :out_tracffic, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :return_tracffic, "回大交通" %>
-		   	<%= f.select(:return_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<!--<%= f.select(:return_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>-->
 		   	<%= f.text_field :return_tracffic, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :cost, "成都成本" %>

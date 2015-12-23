@@ -1,0 +1,13 @@
+I"(function() {
+  jQuery(function() {
+    return $('#package_orders').DataTable({
+      sPaginationType: "full_numbers",
+      bJQueryUI: true,
+      bProcessing: true,
+      bServerSide: true,
+      sAjaxSource: $('#package_orders').data('source')
+    });
+  });
+
+}).call(this);
+:ET

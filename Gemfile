@@ -37,7 +37,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
-
 #search tables
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'jquery-ui-rails', '5.0.5'
