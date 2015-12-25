@@ -22,7 +22,6 @@
 //= require jquery-migrate-1.2.1
 //= require jquery.easyui.min
 //= require jquery.uploadify
-//= require jQuery
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
@@ -30,4 +29,3 @@
 //= require jquery-ui
 //= require bootstrap
 //= require turbolinks
-//= require_tree .
