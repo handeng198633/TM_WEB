@@ -1,0 +1,12 @@
+I"÷(function() {
+  $(function() {
+    return $('#package_orders-table').dataTable({
+      processing: true,
+      serverSide: true,
+      ajax: $('#package_orders-table').data('source'),
+      pagingType: 'full_numbers'
+    });
+  });
+
+}).call(this);
+:ET

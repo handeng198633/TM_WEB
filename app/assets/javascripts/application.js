@@ -29,3 +29,5 @@
 //= require jquery-ui
 //= require bootstrap
 //= require turbolinks
+//= require jquery.dataTables.min
+//= require packageorders

@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20151216024424) do
 
   add_index "finances", ["created_at"], name: "index_finances_on_created_at"
 
-  create_table "fit_orders", force: :cascade do |t|
+  create_table "fitorders", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "group_number"
     t.datetime "outdate"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",        null: false
   end
 
-  add_index "fit_orders", ["order_id", "created_at"], name: "index_fit_orders_on_order_id_and_created_at"
+  add_index "fitorders", ["order_id", "created_at"], name: "index_fitorders_on_order_id_and_created_at"
 
-  create_table "line_lists", force: :cascade do |t|
+  create_table "linelists", force: :cascade do |t|
     t.integer  "line_id"
     t.string   "group_number"
     t.integer  "day"
@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",     null: false
   end
 
-  add_index "line_lists", ["line_id", "created_at"], name: "index_line_lists_on_line_id_and_created_at"
+  add_index "linelists", ["line_id", "created_at"], name: "index_linelists_on_line_id_and_created_at"
 
-  create_table "net_profits", force: :cascade do |t|
+  create_table "netprofits", force: :cascade do |t|
     t.datetime "month"
     t.string   "total_income"
     t.string   "total_coat"
@@ -85,9 +85,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",                   null: false
   end
 
-  add_index "net_profits", ["month"], name: "index_net_profits_on_month", unique: true
+  add_index "netprofits", ["month"], name: "index_netprofits_on_month", unique: true
 
-  create_table "package_orders", force: :cascade do |t|
+  create_table "packageorders", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "group_number"
     t.datetime "outdate"
@@ -102,15 +102,15 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.text     "out_tracffic"
     t.text     "return_tracffic"
     t.integer  "cost"
-    t.string   "package_ornot"
+    t.boolean  "package_ornot",   default: false
     t.string   "sales"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
-  add_index "package_orders", ["order_id", "created_at"], name: "index_package_orders_on_order_id_and_created_at"
+  add_index "packageorders", ["order_id", "created_at"], name: "index_packageorders_on_order_id_and_created_at"
 
-  create_table "plane_tickets", force: :cascade do |t|
+  create_table "planetickets", force: :cascade do |t|
     t.string   "category"
     t.string   "order_id"
     t.string   "number"
@@ -134,9 +134,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",                         null: false
   end
 
-  add_index "plane_tickets", ["created_at"], name: "index_plane_tickets_on_created_at"
+  add_index "planetickets", ["created_at"], name: "index_planetickets_on_created_at"
 
-  create_table "return_infos", force: :cascade do |t|
+  create_table "returninfos", force: :cascade do |t|
     t.string   "category"
     t.string   "content"
     t.string   "remark"
@@ -145,9 +145,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "return_infos", ["created_at"], name: "index_return_infos_on_created_at"
+  add_index "returninfos", ["created_at"], name: "index_returninfos_on_created_at"
 
-  create_table "train_tickets", force: :cascade do |t|
+  create_table "traintickets", force: :cascade do |t|
     t.string   "category"
     t.string   "order_id"
     t.string   "number"
@@ -170,9 +170,9 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",                         null: false
   end
 
-  add_index "train_tickets", ["created_at"], name: "index_train_tickets_on_created_at"
+  add_index "traintickets", ["created_at"], name: "index_traintickets_on_created_at"
 
-  create_table "travel_infos", force: :cascade do |t|
+  create_table "travelinfos", force: :cascade do |t|
     t.string   "category"
     t.string   "content"
     t.string   "remark"
@@ -181,7 +181,7 @@ ActiveRecord::Schema.define(version: 20151216024424) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "travel_infos", ["created_at"], name: "index_travel_infos_on_created_at"
+  add_index "travelinfos", ["created_at"], name: "index_travelinfos_on_created_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

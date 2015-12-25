@@ -1,0 +1,54 @@
+<% provide(:title, "新增包团订单") %>
+
+<h1>订单信息</h1>
+
+<div class="row">
+
+		<div class="col-md-3 col-md-offset-3">
+		<%= form_for(Packageorder.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :group_number, "团号" %>
+		   	<%= f.text_field :group_number, placeholder: "请输入团号。。" %>
+
+		   	<%= f.label :outdate, "出发日期" %>
+		    <%= f.date_field :outdate %>
+
+		    <%= f.label :returndate, "地接日期" %>
+		    <%= f.date_field :returndate %>
+
+		    <%= f.label :travel_agency, "组团社" %>
+		   	<%= f.text_field :travel_agency, placeholder: "请输入组团社名称。。" %>
+
+		   	<%= f.label :person_list, "客人名单|人数" %>
+		   	<%= f.text_field :person_list, placeholder: "请输入客人名单和人数。。" %>
+
+		   	<%= f.label :travel_content, "行程（可编辑）" %>
+		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+
+		   	<%= f.label :price1, "合同价|结算价|西藏报价|结算价" %>
+		   	<%= f.number_field(:price1, in: 0.0..1000000.0, step: 1.0 ) %>
+		   	<%= f.number_field(:price2, in: 0.0..1000000.0, step: 1.0 ) %>
+		   	<%= f.number_field(:price3, in: 0.0..1000000.0, step: 1.0 ) %>
+		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :out_tracffic, "去大交通" %>
+		   	<%= f.select(:out_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.text_field :out_tracffic, placeholder: "出发城市-到达城市。。。" %>
+
+		   	<%= f.label :return_tracffic, "回大交通" %>
+		   	<%= f.select(:return_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.text_field :return_tracffic, placeholder: "出发城市-到达城市。。。" %>
+
+		   	<%= f.label :cost, "成都成本" %>
+		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :package_ornot, "已成团" %>
+		   	<%= f.select(:package_ornot, [['是', true], ['否', false ]]) %>
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+			<%= link_to "退出", packageorders_path, class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>
