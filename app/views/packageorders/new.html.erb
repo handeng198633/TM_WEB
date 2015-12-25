@@ -33,15 +33,15 @@
 		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
 
 		   	<%= f.label :out_tracffic, "去大交通" %>
-		   	<%= f.select(:out_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.select(:out_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
 		   	<%= f.text_field :out_tracffic, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :return_tracffic, "回大交通" %>
-		   	<%= f.select(:return_tracffic, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.select(:return_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
 		   	<%= f.text_field :return_tracffic, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :cost, "成都成本" %>
-		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+		   	<%= f.number_field(:cost, in: 0.0..1000000.0, step: 1.0 ) %>
 
 		   	<%= f.label :package_ornot, "已成团" %>
 		   	<%= f.select(:package_ornot, [['是', true], ['否', false ]]) %>

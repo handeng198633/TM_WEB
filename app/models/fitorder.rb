@@ -10,6 +10,8 @@ class Fitorder < ActiveRecord::Base
       validates :persons_list, presence: true, allow_blank: true
       validates :comeinfo, presence: true, allow_blank: true
       validates :goinfo, presence: true, allow_blank: true
+      validates :comeinfo_way, presence: true, allow_blank: true
+      validates :goinfo_way, presence: true, allow_blank: true
       validates :price1, presence: true, allow_blank: true
       validates :price2, presence: true, allow_blank: true
       validates :price3, presence: true, allow_blank: true

@@ -8,8 +8,10 @@ class CreateFitorders < ActiveRecord::Migration
       t.string :bookinfo
       t.text :info
       t.string :persons_list
-      t.text :comeinfo
-      t.text :goinfo
+      t.string :comeinfo
+      t.string :comeinfo_way
+      t.string :goinfo
+      t.string :goinfo_way
       t.integer :price1
       t.integer :price2
       t.integer :price3
@@ -22,6 +24,5 @@ class CreateFitorders < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :fitorders, [:order_id, :created_at]
   end
 end

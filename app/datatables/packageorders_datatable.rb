@@ -20,21 +20,23 @@ private
     packageorders.map do |packageorder|
       [
         #table outpu
-        h(packageorder.id),
-        h(packageorder.group_number),
-        h(packageorder.outdate.strftime("%y/%m/%d")),
-        h(packageorder.returndate.strftime("%y/%m/%d")),
-        h(packageorder.travel_agency),
-        h(packageorder.person_list),
-        h(packageorder.travel_content),
-        number_to_currency(packageorder.price1) + ' | ' + number_to_currency(packageorder.price2),
-        number_to_currency(packageorder.price3) + ' | ' + number_to_currency(packageorder.price4),
-        h(packageorder.out_tracffic),
-        h(packageorder.return_tracffic),
-        number_to_currency(packageorder.cost),
-        h(packageorder.package_ornot),
-        link_to(current_user.name, current_user),
-        link_to("编辑", edit_packageorder(packageorder))
+        packageorder.id,
+        packageorder.group_number,
+        packageorder.outdate.strftime("%y/%m/%d"),
+        packageorder.returndate.strftime("%y/%m/%d"),
+        packageorder.travel_agency,
+        packageorder.person_list,
+        packageorder.travel_content,
+        packageorder.price1.to_s + ' | ' + packageorder.price2.to_s,
+        packageorder.price3.to_s + ' | ' + packageorder.price4.to_s,
+#        packageorder.out_tracffic_way + ' : ' + 
+        packageorder.out_tracffic,
+#        packageorder.return_tracffic_way + ' : ' + 
+        packageorder.return_tracffic,
+        packageorder.cost,
+        packageorder.package_ornot,
+        packageorder.sales,
+        link_to('编辑', packageorder)
       ]
     end
   end
@@ -47,7 +49,7 @@ private
     packageorders = Packageorder.order("#{sort_column} #{sort_direction}")
     packageorders = packageorders.page(page).per_page(per_page)
     if params[:sSearch].present?
-      packageorders = packageorders.where("name like :search or category like :search", search: "%#{params[:sSearch]}%")
+      packageorders = packageorders.where("id like :search or group_number like :search or outdate like :search or returndate like :search or price1 like :search or price3 like :search or sales like :search", search: "%#{params[:sSearch]}%")
     end
     packageorders
   end
@@ -61,12 +63,24 @@ private
   end
 
   def sort_column
-    columns = %w[name category released_on price]
+    columns = %w[id group_number outdate returndate travel_agency person_list travel_content price1 price3 out_tracffic return_tracffic cost package_ornot sales]
     columns[params[:iSortCol_0].to_i]
   end
 
   def sort_direction
     params[:sSortDir_0] == "desc" ? "desc" : "asc"
+  end
+
+  def current_user
+    if (user_id = session[:user_id])
+          @current_user ||= User.find_by(id: user_id)
+      elsif (user_id = cookies.signed[:user_id])
+          user = User.find_by(id: user_id)
+          if user && user.authenticated?(cookies[:remember_token])
+            log_in user
+            @current_user = user
+          end
+      end
   end
 end
 

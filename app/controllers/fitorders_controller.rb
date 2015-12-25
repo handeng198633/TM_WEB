@@ -15,6 +15,7 @@ class FitordersController < ApplicationController
 
   	def create
   		@fitorder = Fitorder.new(fitorder_params)
+      @fitorder.recipient = current_user.name
   		if @fitorder.save
   			redirect_to fitorders_path
   		else
@@ -28,7 +29,7 @@ class FitordersController < ApplicationController
 
   	private
 	  	def fitorder_params
-	  		params.require(:fitorder).permit(:group_number, :outdate, :returndate, :bookinfo, :info, :persons_list, :comeinfo, :goinfo,:price1, :price2, :price3, :price4, :customers_info, :tip, :recipient, :current_collction, :status)
+	  		params.require(:fitorder).permit(:group_number, :outdate, :returndate, :bookinfo, :info, :persons_list, :comeinfo, :comeinfo_way, :goinfo, :goinfo_way, :price1, :price2, :price3, :price4, :customers_info, :tip, :recipient, :current_collction, :status)
 	  	end
 
       def logged_in_user
@@ -47,5 +48,4 @@ class FitordersController < ApplicationController
 	    def admin_user
 	      redirect_to{roo_url} unless current_user.admin?
 	    end
-	end
 end

@@ -1,4 +1,4 @@
-<% provide(:title, "新增散客订单") %>
+<% provide(:title, "散客订单") %>
 <h1>订单信息</h1>
 
 <div class="row">
@@ -21,15 +21,15 @@
 		   	<%= f.label :info, "出团通知" %>
 		   	<%= f.text_field :info, placeholder: "请输入出团通知。。" %>
 
-		   	<%= f.label :person_list, "客人名单|人数" %>
-		   	<%= f.text_field :person_list, placeholder: "请输入客人名单和人数。。" %>
+		   	<%= f.label :persons_list, "客人名单|人数" %>
+		   	<%= f.text_field :persons_list, placeholder: "请输入客人名单和人数。。" %>
 
 		   	<%= f.label :comeinfo, "接" %>
-		   	<%= f.select(:comeinfo, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.select(:comeinfo_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
 		   	<%= f.text_field :comeinfo, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :goinfo, "送" %>
-		   	<%= f.select(:goinfo, [['飞机', 4], ['火车', 3], ['汽车', 2], ['轮船', 1]]) %>
+		   	<%= f.select(:goinfo_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
 		   	<%= f.text_field :goinfo, placeholder: "出发城市-到达城市。。。" %>
 
 		   	<%= f.label :price1, "收客价|地接价|西藏报价|结算价" %>
@@ -44,11 +44,11 @@
 		   	<%= f.label :tip, "备注" %>
 		   	<%= f.text_field :tip, placeholder: "备注。。" %>
 
-		   	<%= f.label :cost, "当前已收款" %>
-		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+		   	<%= f.label :current_collction, "当前已收款" %>
+		   	<%= f.number_field(:current_collction, in: 0.0..1000000.0, step: 1.0 ) %>
 
 		   	<%= f.label :status, "状态" %>
-		   	<%= f.select(:status, [['确认', true], ['不', false ]) %>
+		   	<%= f.select(:status, [['确认', '确认'], ['未确认', '未确认' ]]) %>
 			
 			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
 			<%= link_to "退出", fitorders_path, class: "btn btn-primary" %>

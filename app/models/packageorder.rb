@@ -12,6 +12,8 @@ class Packageorder < ActiveRecord::Base
       validates :price2, presence: true, allow_blank: true
       validates :price3, presence: true, allow_blank: true
       validates :price4, presence: true, allow_blank: true
+      validates :out_tracffic_way, presence: true, allow_blank: true
+      validates :return_tracffic_way, presence: true, allow_blank: true
       validates :out_tracffic, presence: true, allow_blank: true
       validates :return_tracffic, presence: true, allow_blank: true
       validates :cost, presence: true, allow_blank: true

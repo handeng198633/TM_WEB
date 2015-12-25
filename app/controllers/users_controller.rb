@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   	if @user.save
 #      log_in @user
       flash[:success] = @user.name + '创建成功'
-      render 'index'
+      render root_url
   	else
   		render 'new'
   	end
@@ -24,6 +24,10 @@ class UsersController < ApplicationController
       @user.update_attribute(:admin, true)
       @user.save
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def edit

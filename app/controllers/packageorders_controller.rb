@@ -15,6 +15,7 @@ class PackageordersController < ApplicationController
 
     	def create
     		@packageorder = Packageorder.new(packageorder_params)
+        @packageorder.sales = current_user.name
     		if @packageorder.save
     			redirect_to packageorders_path
     		else
@@ -30,7 +31,7 @@ class PackageordersController < ApplicationController
     	private
 
   	  	def packageorder_params
-  	  		params.require(:packageorder).permit(:group_number, :outdate, :returndate, :travel_agency, :person_list, :travel_content, :price1, :price2, :price3, :price4, :out_tracffic, :return_tracffic, :cost, :package_ornot, :sales)
+  	  		params.require(:packageorder).permit(:group_number, :outdate, :returndate, :travel_agency, :person_list, :travel_content, :price1, :price2, :price3, :price4, :out_tracffic, :out_tracffic_way, :return_tracffic, :return_tracffic_way, :cost, :package_ornot, :sales)
   	  	end
 
   	    def correct_user
