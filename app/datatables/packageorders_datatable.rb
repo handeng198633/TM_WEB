@@ -29,10 +29,8 @@ private
         packageorder.travel_content,
         packageorder.price1.to_s + ' | ' + packageorder.price2.to_s,
         packageorder.price3.to_s + ' | ' + packageorder.price4.to_s,
-#        packageorder.out_tracffic_way + ' : ' + 
-        packageorder.out_tracffic,
-#        packageorder.return_tracffic_way + ' : ' + 
-        packageorder.return_tracffic,
+        packageorder.out_tracffic_way + ' : ' + packageorder.out_tracffic,
+        packageorder.return_tracffic_way + ' : ' + packageorder.return_tracffic,
         packageorder.cost,
         packageorder.package_ornot,
         packageorder.sales,

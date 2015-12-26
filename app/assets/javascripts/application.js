@@ -32,3 +32,4 @@
 //= require jquery.dataTables.min
 //= require packageorders
 //= require fitorders
+//= require linelists

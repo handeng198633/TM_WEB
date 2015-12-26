@@ -1,2 +1,43 @@
-<h1>LineLists#new</h1>
-<p>Find me in app/views/line_lists/new.html.erb</p>
+<% provide(:title, "新增旅游线路") %>
+
+<h1>旅游线路信息</h1>
+
+<div class="row">
+
+		<div class="col-md-3 col-md-offset-3">
+		<%= form_for(Linelist.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :group_number, "团号" %>
+		   	<%= f.text_field :group_number, placeholder: "请输入团号。。" %>
+
+		   	<%= f.label :day, "天数" %>
+		   	<%= f.number_field(:day, in: 0.0..1000.0, step: 1.0 ) %>
+
+		    <%= f.label :linename, "线路编号" %>
+		   	<%= f.text_field :linename, placeholder: "请输入线路编号。。" %>
+
+		   	<%= f.label :line_info, "客人名单|人数" %>
+		   	<%= f.text_field :line_info, placeholder: "请输入线路名称。。" %>
+
+		   	<%= f.label :travel_content, "行程（可编辑）" %>
+		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+
+		   	<%= f.label :picture, "主配图" %>
+		   	<%= f.file_field :picture %>
+
+		   	<%= f.label :document, "文档" %>
+		   	<%= f.file_field :document %>
+
+		   	<%= f.label :price, "价格发布" %>
+		   	<%= f.number_field(:price, in: 0.0..100000.0, step: 1.0 ) %>
+
+		   	<%= f.label :selling_ornot, "销售中" %>
+		   	<%= f.select(:selling_ornot, [['是', true ], ['否', false ]]) %>
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+			<%= link_to "退出", linelists_path, class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>

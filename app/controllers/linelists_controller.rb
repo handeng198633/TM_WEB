@@ -1,6 +1,6 @@
 class LinelistsController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :update, :new, :show]
-	before_action :admin_user, only: :destroy
+	before_action :admin_user, only: [:create, :update, :new, :destroy]
 
 	def index
   		respond_to do |format|
@@ -28,7 +28,7 @@ class LinelistsController < ApplicationController
 
   	private
 	  	def linelist_params
-	  		params.require(:linelist).permit(:group_number, :day, :linename, :line_info, :travel_content, :picture_id, :document_id, :price, :record_person, :selling_ornot)
+	  		params.require(:linelist).permit(:group_number, :day, :linename, :line_info, :travel_content, :picture, :document, :price, :record_person, :selling_ornot)
 	  	end
 
 	    def logged_in_user

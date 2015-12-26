@@ -7,8 +7,8 @@ class CreateLinelists < ActiveRecord::Migration
       t.string :linename
       t.string :line_info
       t.text :travel_content
-      t.integer :picture_id
-      t.integer :document_id
+      t.text :picture
+      t.text :document
       t.string :price
       t.string :record_person
       t.string :selling_ornot
