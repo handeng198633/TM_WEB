@@ -15,6 +15,7 @@ class LinelistsController < ApplicationController
 
   	def create
   		@linelist = Linelist.new(linelist_params)
+      @linelist.record_person = current_user.name
   		if @linelist.save
   			redirect_to linelists_path
   		else
