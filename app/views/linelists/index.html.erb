@@ -1,6 +1,11 @@
 <% provide(:title, "旅游线路") %>
 <h1>旅游线路</h1>
 
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+      <%= link_to "新增", new_linelist_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
 <table id="linelists" class="display" data-source="<%= linelists_url(:format => "json") %>">
   <thead>

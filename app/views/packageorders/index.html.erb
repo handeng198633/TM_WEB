@@ -1,5 +1,12 @@
 <% provide(:title, "包团订单") %>
+
 <h1>包团订单</h1>
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+      <%= link_to "新增", new_packageorder_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
 <table id="packageorders" class="display" data-source="<%= packageorders_url(:format => "json") %>">
   <thead>

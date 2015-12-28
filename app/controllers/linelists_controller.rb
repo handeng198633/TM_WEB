@@ -1,6 +1,6 @@
 class LinelistsController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :update, :new, :show]
-	before_action :admin_user, only: [:create, :update, :new, :destroy]
+  before_action :admin_user, only: :destroy
 
 	def index
   		respond_to do |format|
@@ -11,7 +11,7 @@ class LinelistsController < ApplicationController
 
 	def new
   		@linelist = Linelist.new
-  	end
+  end
 
   	def create
   		@linelist = Linelist.new(linelist_params)
@@ -24,7 +24,8 @@ class LinelistsController < ApplicationController
   	end
 
   	def destroy
-  		Linelist.find(params[:line_id]).destroy
+  		Linelist.find(params[:id]).destroy
+      redirect_to linelists_path
   	end
 
   	private
@@ -48,5 +49,4 @@ class LinelistsController < ApplicationController
 	    def admin_user
 	      redirect_to{roo_url} unless current_user.admin?
 	    end
-	end
 end

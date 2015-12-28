@@ -8,7 +8,7 @@ class LinelistsDatatable
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: Linelists.count,
+      iTotalRecords: Linelist.count,
       iTotalDisplayRecords: linelists.total_entries,
       aaData: data
     }
@@ -25,12 +25,12 @@ private
         linelist.day,
         linelist.linename + ' | ' + linelist.line_info,
         linelist.travel_content,
-        linelist.picture,
-        linelist.document,
+        link_to("下载图片", linelist.picture_url),
+        link_to("下载文档", linelist.document_url),
         linelist.price,
         linelist.record_person,
         linelist.selling_ornot,
-        link_to("编辑", linelist)
+        link_to("编辑", linelist) + ' | ' + link_to("删除", linelist, method: :delete, confirm: "确定删除线路 #{linelist.id}?" )
       ]
     end
   end

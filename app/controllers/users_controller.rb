@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-#      log_in @user
+      log_in @user
       flash[:success] = @user.name + '创建成功'
       render root_url
   	else

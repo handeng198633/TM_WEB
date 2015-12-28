@@ -4,7 +4,7 @@ class PackageordersController < ApplicationController
 
   	def index
     		respond_to do |format|
-      	format.html
+      	format.html {}
       	format.json { render json: PackageordersDatatable.new(view_context) }
         end
     end
@@ -24,7 +24,8 @@ class PackageordersController < ApplicationController
     	end
 
     	def destroy
-    		Packageorder.find(params[:order_id]).destroy
+    		Packageorder.find(params[:id]).destroy
+        redirect_to packageorders_path
     	end
 
 
