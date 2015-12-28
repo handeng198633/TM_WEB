@@ -22,8 +22,8 @@ private
         #table outpu
         packageorder.id,
         packageorder.group_number,
-        packageorder.outdate("%y-%m-%d"),
-        packageorder.returndate("%y-%m-%d"),
+        packageorder.outdate.strftime("%y-%m-%d"),
+        packageorder.returndate.strftime("%y-%m-%d"),
         packageorder.travel_agency,
         packageorder.person_list,
         packageorder.travel_content,

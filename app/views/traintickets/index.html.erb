@@ -3,16 +3,6 @@
 <h1>火车票订单</h1>
 
 
-<%= month_calendar events: @ticketstates do |date, ticketstates| %>
-  <%= date %>
-
-  <% ticketstates.each do |ticketstate| %>
-    <div>
-      <%= ticketstate.stateinfo %>
-    </div>
-  <% end %>
-<% end %>
-
 <div class="row">
   <div class="col-md-2 col-md-offset-1">
       <%= link_to "新增", new_trainticket_path, class: "btn btn-primary" %>
@@ -40,6 +30,7 @@
       <th>报票人</th>
       <th>报票备注</th>
       <th>状态</th>
+      <th>操作</th>
     </tr>
   </thead>
   <tbody>

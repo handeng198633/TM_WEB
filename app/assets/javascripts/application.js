@@ -34,3 +34,5 @@
 //= require fitorders
 //= require linelists
 //= require netprofits
+//= require traintickets
+

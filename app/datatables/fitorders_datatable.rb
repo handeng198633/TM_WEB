@@ -49,7 +49,7 @@ class FitordersDatatable
       fitorders = Fitorder.order("#{sort_column} #{sort_direction}")
       fitorders = fitorders.page(page).per_page(per_page)
       if params[:sSearch].present?
-        fitorders = fitorders.where("id like :search or group_number like :search or outdate.strftime("%y/%m/%d") like :search or returndate.strftime("%y/%m/%d") like :search or bookinfo like :search or info like :search or comeinfo like :search or goinfo like :search or price1 like :search or price3 like :search or recipient like :search", search: "%#{params[:sSearch]}%")
+        fitorders = fitorders.where("id like :search or group_number like :search or outdate like :search or returndate like :search or bookinfo like :search or info like :search or comeinfo like :search or goinfo like :search or price1 like :search or price3 like :search or recipient like :search", search: "%#{params[:sSearch]}%")
       end
       fitorders
     end
