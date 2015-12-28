@@ -1,2 +1,48 @@
-<h1>TrainTickets#index</h1>
-<p>Find me in app/views/train_tickets/index.html.erb</p>
+<% provide(:title, "火车票订单") %>
+
+<h1>火车票订单</h1>
+
+
+<%= month_calendar events: @ticketstates do |date, ticketstates| %>
+  <%= date %>
+
+  <% ticketstates.each do |ticketstate| %>
+    <div>
+      <%= ticketstate.stateinfo %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+      <%= link_to "新增", new_trainticket_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<table id="traintickets" class="display" data-source="<%= traintickets_url(:format => "json") %>">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>类别</th>
+      <th>订单ID</th>
+      <th>小团号</th>
+      <th>出发日期</th>
+      <th>行程</th>
+      <th>联运</th>
+      <th>出票地</th>
+      <th>游客姓名</th>
+      <th>身份证</th>
+      <th>票面</th>
+      <th>难度</th>
+      <th>座位1</th>
+      <th>座位2</th>
+      <th>备注</th>
+      <th>报票人</th>
+      <th>报票备注</th>
+      <th>状态</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :ticketstates
   root 'sessions#new'
   get 'signup'   => 'users#new'
   get 'login'    => 'sessions#new'
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
   resources :fitorders
   resources :packageorders
   resources :linelists
+  resources :netprofits
+  resources :traintickets
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

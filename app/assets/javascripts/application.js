@@ -33,3 +33,4 @@
 //= require packageorders
 //= require fitorders
 //= require linelists
+//= require netprofits

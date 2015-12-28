@@ -24,7 +24,8 @@ class FitordersController < ApplicationController
   	end
 
   	def destroy
-  		Fitorder.find(params[:order_id]).destroy
+  		Fitorder.find(params[:id]).destroy
+      redirect_to fitorders_path
   	end
 
   	private

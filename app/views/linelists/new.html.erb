@@ -4,8 +4,8 @@
 
 <div class="row">
 
-		<div class="col-md-3 col-md-offset-3">
-		<%= form_for(Linelist.new) do |f| %>
+		<div class="col-md-3 col-md-offset-3 ">
+		<%= form_for(Linelist.new,  :html => { :multipart => true } ) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 
 			<%= f.label :group_number, "团号" %>
@@ -17,8 +17,8 @@
 		    <%= f.label :linename, "线路编号" %>
 		   	<%= f.text_field :linename, placeholder: "请输入线路编号。。" %>
 
-		   	<%= f.label :line_info, "客人名单|人数" %>
-		   	<%= f.text_field :line_info, placeholder: "请输入线路名称。。" %>
+		   	<%= f.label :line_info, "线路信息" %>
+		   	<%= f.text_field :line_info, placeholder: "请输入线路具体信息。。" %>
 
 		   	<%= f.label :travel_content, "行程（可编辑）" %>
 		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>

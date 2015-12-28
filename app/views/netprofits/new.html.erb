@@ -1,2 +1,37 @@
-<h1>NetProfits#new</h1>
-<p>Find me in app/views/net_profits/new.html.erb</p>
+<% provide(:title, "新增净利润表") %>
+
+<h1>新增净利润表</h1>
+
+<div class="row">
+
+		<div class="col-md-3 col-md-offset-3">
+		<%= form_for(Netprofit.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :month, "月份" %>
+		   	<%= f.month_field :month %>
+
+		   	<%= f.label :total_income, "收入合计" %>
+		   	<%= f.number_field(:total_income, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :total_coat, "支出合计" %>
+		   	<%= f.number_field(:total_coat, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		    <%= f.label :profit, "利润" %>
+		   	<%= f.number_field(:profit, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :fax, "税" %>
+		   	<%= f.number_field(:fax, in: 0.0..100000.0, step: 1.0 ) %>
+
+		   	<%= f.label :net_profit, "净利润" %>
+		   	<%= f.number_field(:fax, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :status, "状态" %>
+		   	<%= f.select(:status, [['是', true], ['否', false ]]) %>
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+			<%= link_to "退出", netprofits_path, class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>

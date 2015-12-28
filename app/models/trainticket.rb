@@ -1,5 +1,4 @@
 class Trainticket < ActiveRecord::Base
-	default_scope -> { order('created_at DESC') }
 
 	validates :category, presence: true, allow_blank: true
 	validates :order_id, presence: true, allow_blank: true
