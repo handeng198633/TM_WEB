@@ -1,2 +1,67 @@
-<h1>TrainTickets#new</h1>
-<p>Find me in app/views/train_tickets/new.html.erb</p>
+<% provide(:title, "火车票订单") %>
+
+<h1>新建火车票订单</h1>
+
+<div class="row">
+
+		<div class="col-md-3 col-md-offset-3">
+		<%= form_for(Trainticket.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :category, "类别" %>
+		   	<%= f.text_field :category, placeholder: "请输入类别。。" %>
+
+		   	<%= f.label :order_id, "订单ID" %>
+		   	<%= f.text_field :order_id, placeholder: "请输入订单ID。。" %>
+
+		   	<%= f.label :number, "小团号" %>
+		   	<%= f.text_field :number, placeholder: "请输入小团号。。" %>
+
+		   	<%= f.label :outdate, "出发日期" %>
+		    <%= f.date_field :outdate %>
+
+		   	<%= f.label :travel_content, "行程（可编辑）" %>
+		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+
+		   	<%= f.label :combined_transport, "联运" %>
+		   	<%= f.text_field :combined_transport %>
+
+		   	<%= f.label :place, "出票地" %>
+		   	<%= f.text_field :place %>
+
+		   	<%= f.label :person_name, "游客姓名" %>
+		   	<%= f.text_field :person_name %>
+
+		   	<%= f.label :person_idcard, "身份证号码" %>
+		   	<%= f.text_field :person_idcard %>
+
+		   	<%= f.label :ticket_cost, "票面" %>
+		   	<%= f.number_field(:ticket_cost, in: 0.0..1000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :difficulty, "难度" %>
+		   	<%= f.text_field :difficulty %>	
+
+		   	<%= f.label :seat1, "座位1" %>
+		   	<%= f.text_field :seat1 %>	
+
+		   	<%= f.label :seat2, "座位2" %>
+		   	<%= f.text_field :seat2 %>	
+
+		   	<%= f.label :remark, "备注" %>
+		   	<%= f.text_field :remark %>
+
+		   	<%= f.label :record_remark, "报票备注" %>
+		   	<%= f.text_field :record_remark %>
+
+		   	<%= f.label :state, "票况" %>
+		   	<%= f.select(:state, [['Yes', true ], ['No', false ]]) %>
+
+		   	<%= f.label :state_step, "具体状态" %>
+		   	<%= f.select(:state_step, [['已发', '已发'], ['已出', '已出'], ['已取', '已取'], ['已退', '已退']]) %>
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+			<%= link_to "退出", traintickets_path, class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>

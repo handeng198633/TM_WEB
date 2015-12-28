@@ -3,7 +3,7 @@ class TrainticketsController < ApplicationController
 	before_action :admin_user, only: :destroy
 
   	def index
-    	respond_to do |format|
+    	  respond_to do |format|
       	format.html {}
       	format.json { render json: TrainticketsDatatable.new(view_context) }
         end
@@ -19,11 +19,11 @@ class TrainticketsController < ApplicationController
 
     	def create
     		@trainticket = Trainticket.new(trainticket_params)
-        @trainticket.sales = current_user.name
+        @trainticket.record_person = current_user.name
     		if @trainticket.save
     			redirect_to traintickets_path
     		else
-    			render 'new'	
+    			render 'new'
     		end
     	end
 
@@ -36,7 +36,7 @@ class TrainticketsController < ApplicationController
     	private
 
   	  	def trainticket_params
-  	  		params.require(:trainticket).permit()
+  	  		params.require(:trainticket).permit(:category, :order_id, :number, :outdate, :travel_content, :combined_transport, :place, :person_name, :person_idcard, :ticket_cost, :difficulty, :seat1, :seat2, :remark, :record_remark, :state, :state_step)
   	  	end
 
   	    def correct_user
