@@ -2,8 +2,8 @@ class Fitorder < ActiveRecord::Base
       belongs_to :user
 
       validates :group_number, presence: true, allow_blank: true
-      validates :outdate, presence: true, allow_blank: true
-      validates :returndate, presence: true, allow_blank: true
+      validates :outdate, presence: true
+      validates :returndate, presence: true
       validates :bookinfo, presence: true, allow_blank: true
       validates :info, presence: true, allow_blank: true
       validates :persons_list, presence: true, allow_blank: true

@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228101606) do
+ActiveRecord::Schema.define(version: 20151229023129) do
+
+  create_table "finances", force: :cascade do |t|
+    t.datetime "out_date"
+    t.datetime "package_date"
+    t.string   "content"
+    t.string   "travel_agency"
+    t.integer  "person_number"
+    t.string   "price4_person"
+    t.integer  "should"
+    t.integer  "received"
+    t.integer  "balance"
+    t.string   "remark"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "finances", ["created_at"], name: "index_finances_on_created_at"
 
   create_table "fitorders", force: :cascade do |t|
     t.integer  "order_id"
@@ -92,6 +109,33 @@ ActiveRecord::Schema.define(version: 20151228101606) do
     t.string   "out_tracffic_way"
     t.string   "return_tracffic_way"
   end
+
+  create_table "planetickets", force: :cascade do |t|
+    t.string   "category"
+    t.string   "order_id"
+    t.string   "number"
+    t.datetime "outdate"
+    t.string   "travel_content"
+    t.string   "combined_transport"
+    t.datetime "ticketdate"
+    t.string   "place"
+    t.string   "person_name"
+    t.string   "person_idcard"
+    t.datetime "valid_date"
+    t.datetime "born_date"
+    t.integer  "ticket_cost"
+    t.integer  "counter_cost"
+    t.string   "plane"
+    t.string   "remark"
+    t.string   "record_person"
+    t.string   "record_remark"
+    t.boolean  "state",              default: false
+    t.string   "state_step"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "planetickets", ["created_at"], name: "index_planetickets_on_created_at"
 
   create_table "returninfos", force: :cascade do |t|
     t.string   "category"

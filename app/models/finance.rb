@@ -1,7 +1,6 @@
 class Finance < ActiveRecord::Base
-	default_scope -> { order('created_at DESC') }
 
-	validates :out_date, presence: true, allow_blank: true
+	validates :out_date, presence: true
 	validates :package_date, presence: true, allow_blank: true
 	validates :content, presence: true, allow_blank: true
 	validates :travel_agency, presence: true, allow_blank: true	

@@ -2,8 +2,8 @@ class Packageorder < ActiveRecord::Base
 	belongs_to :user
 
 	validates :group_number, presence: true, allow_blank: true
-      validates :outdate, presence: true, allow_blank: true
-      validates :returndate, presence: true, allow_blank: true
+      validates :outdate, presence: true
+      validates :returndate, presence: true
       validates :travel_agency, presence: true, allow_blank: true
       validates :person_list, presence: true, allow_blank: true
       validates :travel_content, presence: true, allow_blank: true

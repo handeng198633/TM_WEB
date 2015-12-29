@@ -24,7 +24,7 @@ private
         trainticket.category,
         trainticket.order_id,
         trainticket.number,
-        trainticket.outdate,
+        trainticket.outdate.strftime("%y-%m-%d"),
         trainticket.travel_content,
         trainticket.combined_transport,
         trainticket.place,
@@ -38,6 +38,7 @@ private
         trainticket.record_person,
         trainticket.record_remark,
         trainticket.state,
+        trainticket.state_step,
         link_to('编辑', trainticket) + ' | ' + link_to("删除", trainticket, method: :delete, confirm: "确定删除订单 #{trainticket.id}?" )
       ]
     end
@@ -51,7 +52,7 @@ private
     traintickets = Trainticket.order("#{sort_column} #{sort_direction}")
     traintickets = traintickets.page(page).per_page(per_page)
     if params[:sSearch].present?
-      traintickets = traintickets.where("id like :search or category like :search or order_id like :search or number like :search or outdate like :search or combined_transport like :search or place like :search or person_name  like :search or person_idcard like :search or ticket_cost like :search or difficulty like :search", search: "%#{params[:sSearch]}%")
+      traintickets = traintickets.where("id like :search or category like :search or order_id like :search or number like :search or outdate like :search or combined_transport like :search or place like :search or person_name  like :search or person_idcard like :search or ticket_cost like :search or difficulty like :search or record_person like :search", search: "%#{params[:sSearch]}%")
     end
     traintickets
   end
@@ -65,7 +66,7 @@ private
   end
 
   def sort_column
-    columns = %w[id category order_id number outdate travel_content combined_transport place person_name person_idcard ticket_cost difficulty seat1 seat2 remark record_person record_remark state]
+    columns = %w[id category order_id number outdate travel_content combined_transport place person_name person_idcard ticket_cost difficulty seat1 seat2 remark record_person record_remark state state_step]
     columns[params[:iSortCol_0].to_i]
   end
 

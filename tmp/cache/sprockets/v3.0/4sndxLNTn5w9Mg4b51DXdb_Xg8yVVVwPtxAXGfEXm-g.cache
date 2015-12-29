@@ -1,0 +1,13 @@
+I"(function() {
+  jQuery(function() {
+    return $('#planetickets').dataTable({
+      sPaginationType: "full_numbers",
+      bJQueryUI: true,
+      bProcessing: true,
+      bServerSide: true,
+      sAjaxSource: $('#planetickets').data('source')
+    });
+  });
+
+}).call(this);
+:ET
