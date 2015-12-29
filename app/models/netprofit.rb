@@ -1,6 +1,6 @@
 class Netprofit < ActiveRecord::Base
 
-	validates :month, presence: true, allow_blank: true
+	validates :month, presence: true
 	validates :total_income, presence: true, allow_blank: true
 	validates :total_coat, presence: true, allow_blank: true
 	validates :profit, presence: true, allow_blank: true

@@ -1,2 +1,30 @@
-<h1>Finances#index</h1>
-<p>Find me in app/views/finances/index.html.erb</p>
+<% provide(:title, "旅行团统计") %>
+
+<h1>旅行团统计</h1>
+
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+      <%= link_to "新增", new_finance_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<table id="finances" class="display" data-source="<%= finances_url(:format => "json") %>">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>出发日期</th>
+      <th>完团日期</th>
+      <th>行程</th>
+      <th>组团社</th>
+      <th>人数</th>
+      <th>单价</th>
+      <th>应收金额</th>
+      <th>已收金额</th>
+      <th>余款</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

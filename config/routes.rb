@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :ticketstates
+
   root 'sessions#new'
   get 'signup'   => 'users#new'
   get 'login'    => 'sessions#new'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   resources :linelists
   resources :netprofits
   resources :traintickets
+  resources :planetickets
+  resources :finances
 
 
   # The priority is based upon order of creation: first created -> highest priority.

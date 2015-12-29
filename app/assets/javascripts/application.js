@@ -35,4 +35,6 @@
 //= require linelists
 //= require netprofits
 //= require traintickets
+//= require planetickets
+//= require finances
 

@@ -3,7 +3,7 @@ class Trainticket < ActiveRecord::Base
 	validates :category, presence: true, allow_blank: true
 	validates :order_id, presence: true, allow_blank: true
 	validates :number, presence: true, allow_blank: true
-	validates :outdate, presence: true, allow_blank: true	
+	validates :outdate, presence: true
 	validates :travel_content, presence: true, allow_blank: true	
 	validates :combined_transport, presence: true, allow_blank: true	
 	validates :place, presence: true, allow_blank: true	

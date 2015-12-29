@@ -1,2 +1,44 @@
-<h1>Finances#new</h1>
-<p>Find me in app/views/finances/new.html.erb</p>
+<% provide(:title, "旅行团统计") %>
+
+<h1>新增统计</h1>
+
+<div class="row">
+
+		<div class="col-md-3 col-md-offset-3">
+		<%= form_for(Finance.new) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+		   	<%= f.label :out_date, "出发日期" %>
+		    <%= f.date_field :out_date %>
+
+		    <%= f.label :package_date, "完团日期" %>
+		    <%= f.date_field :package_date %>
+
+		   	<%= f.label :content, "行程（可编辑）" %>
+		   	<%= f.text_field :content, placeholder: "请输入行程。。。" %>
+
+		   	<%= f.label :travel_agency, "组团社" %>
+		   	<%= f.text_field :travel_agency %>
+
+		   	<%= f.label :person_number, "人数" %>
+		   	<%= f.number_field(:person_number, in: 0.0..10000.0, step: 1.0 ) %>
+
+		   	<%= f.label :price4_person, "单价" %>
+		   	<%= f.number_field(:price4_person, in: 0.0..1000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :should, "应收金额" %>
+		   	<%= f.number_field(:should, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :received, "实收金额" %>
+		   	<%= f.number_field(:received, in: 0.0..10000000.0, step: 1.0 ) %>
+
+		   	<%= f.label :remark, "备注" %>
+		   	<%= f.text_field :remark %>
+			
+			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+			<%= link_to "退出", finances_path, class: "btn btn-primary" %>
+		<% end %>
+
+	</div>
+</div>
+
