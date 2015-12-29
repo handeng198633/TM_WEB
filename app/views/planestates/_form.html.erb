@@ -1,0 +1,24 @@
+<%= form_for(@planestate) do |f| %>
+  <% if @planestate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planestate.errors.count, "error") %> prohibited this planestate from being saved:</h2>
+
+      <ul>
+      <% @planestate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :stateinfo, "票务信息" %>
+    <%= f.select(:stateinfo, [['票已出完', '票已出完'], ['有余票', '有余票'], ['其它', '其它']]) %>
+
+
+    <%= f.label :start_time, "具体时间" %>
+    <%= f.datetime_select :start_time %>
+
+
+    <%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
+
+<% end %>
