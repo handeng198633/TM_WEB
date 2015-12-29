@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :planestates
   resources :ticketstates
 
   root 'sessions#new'

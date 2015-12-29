@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Stateinfo:</strong>
+  <strong>票务情况:</strong>
   <%= @ticketstate.stateinfo %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
+  <strong>时间:</strong>
   <%= @ticketstate.start_time %>
 </p>
 
-<%= link_to 'Edit', edit_ticketstate_path(@ticketstate) %> |
-<%= link_to 'Back', ticketstates_path %>
+<%= link_to '编辑', edit_ticketstate_path(@ticketstate) %> |
+<%= link_to '退出', ticketstates_path %>

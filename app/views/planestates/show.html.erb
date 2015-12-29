@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>票务情况:</strong>
+  <%= @planestate.stateinfo %>
+</p>
+
+<p>
+  <strong>时间:</strong>
+  <%= @planestate.start_time %>
+</p>
+
+<%= link_to '编辑', edit_planestate_path(@planestate) %> |
+<%= link_to '退出', planestates_path %>

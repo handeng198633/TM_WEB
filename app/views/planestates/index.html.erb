@@ -1,0 +1,41 @@
+<% provide(:title, "飞机票订单") %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>飞机票订单</h1>
+
+<%= link_to '创建', new_planestate_path, class: "btn btn-primary"%>
+
+<%= month_calendar events: @planestates do |date, planestates| %>
+  <%= date %>
+
+  <% planestates.each do |planestate| %>
+    <div>
+      <%= planestate.stateinfo %>
+    </div>
+  <% end %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>票务信息</th>
+      <th>时间</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planestates.each do |planestate| %>
+      <tr>
+        <td><%= planestate.stateinfo %></td>
+        <td><%= planestate.start_time %></td>
+        <td><%= link_to '显示', planestate %></td>
+        <td><%= link_to '编辑', edit_planestate_path(planestate) %></td>
+        <td><%= link_to '删除', planestate, method: :delete, data: { confirm: '确定?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,4 +1,5 @@
 class TicketstatesController < ApplicationController
+  before_action :logged_in_user, only: [:index, :create, :update, :new, :show]
   before_action :set_ticketstate, only: [:show, :edit, :update, :destroy]
 
   # GET /ticketstates

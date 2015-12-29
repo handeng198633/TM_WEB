@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229023129) do
+ActiveRecord::Schema.define(version: 20151229083549) do
 
   create_table "finances", force: :cascade do |t|
     t.datetime "out_date"
@@ -108,6 +108,13 @@ ActiveRecord::Schema.define(version: 20151229023129) do
     t.datetime "updated_at",                          null: false
     t.string   "out_tracffic_way"
     t.string   "return_tracffic_way"
+  end
+
+  create_table "planestates", force: :cascade do |t|
+    t.text     "stateinfo"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "planetickets", force: :cascade do |t|
