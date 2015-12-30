@@ -3,8 +3,8 @@
     <div class="m-div clear">
        
         <a class="fl log">
-        <div class="fl menu" style="margin-left: 120px;">
-            <a href="./" class="fl menu-btn menu-btn-fire">忆游假日在线CMS</a>
+        <div class="fl menu" style="margin-left: 40px;">
+            <%= link_to '忆游假日在线CMS', root_path, class: "fl menu-btn menu-btn-fire"%>
             
             <div class="menu-drop">
                 <a class="close" href="./忆游假期.html"></a>
@@ -19,35 +19,21 @@
                 <% end %>
                 <div id="user-static-info-div" class="fr menu2">    
                     <a class="fl menu-btn menu-btn-fire border-radius-2" href="/signup">注册</a>
-                    <li id="logo" class="dropdown fl menu-btn">
-          
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户设置<b class="caret"></b>
-                                </a>
-                    <ul class="dropdown-menu">
-                    <li><%= link_to "更新信息/密码", edit_user_path(current_user) %></li>
-                    <li class="divider"></li>
-                    <li>
-                                        <%= link_to "退出", logout_path, method: "delete" %>
-                    </li>
-                                </ul>
-                    </li>
+
+                    <%= link_to "密码更新", edit_user_path(current_user), class: "fl menu-btn menu-btn-fire border-radius-2" %>
+
+                    <%= link_to "退出", logout_path, method: "delete", class: "fl menu-btn menu-btn-fire border-radius-2" %>
+                </div>
                 
         <% elsif logged_in? %>
                 <% flash.each do |key, value| %>
                         <div class="alert alert-<%= key %>"><%= value %></div>
                 <% end %>
-                                    <li id="logo" class="dropdown fl menu-btn">
-          
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户设置<b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><%= link_to "更新信息/密码", edit_user_path(current_user) %></li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <%= link_to "退出", logout_path, method: "delete" %>
-                                    </li>
-                                </ul>
-                                    </li>
+
+                    <%= link_to "密码更新", edit_user_path(current_user), class: "fl menu-btn menu-btn-fire border-radius-2" %>
+
+                    <%= link_to "退出", logout_path, method: "delete", class: "fl menu-btn menu-btn-fire border-radius-2" %>
+                </div>
         <% end %>
 
     </div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  amount: 1
+  person_number: 1
+  profit: 1
+  received: 1
+  noreceived: 1
+
+two:
+  name: MyString
+  amount: 1
+  person_number: 1
+  profit: 1
+  received: 1
+  noreceived: 1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229083549) do
+ActiveRecord::Schema.define(version: 20151230031241) do
 
   create_table "finances", force: :cascade do |t|
     t.datetime "out_date"
@@ -154,6 +154,17 @@ ActiveRecord::Schema.define(version: 20151229083549) do
   end
 
   add_index "returninfos", ["created_at"], name: "index_returninfos_on_created_at"
+
+  create_table "salescounts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "amount"
+    t.integer  "person_number"
+    t.integer  "profit"
+    t.integer  "received"
+    t.integer  "noreceived"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "ticketstates", force: :cascade do |t|
     t.string   "stateinfo"
