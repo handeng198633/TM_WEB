@@ -10,17 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require jquery-ui
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
 
  * head css
- *= require reset
  *= require index
- *= require uploadify
- *= require easyui
  *= require simple_calendar
+ *= require bootstrap.min
+ *= require bootstrap-responsive.min
+ *= require matrix-style
+ *= require matrix-media
+ *= require font-awesome
+ *= require prettyPhoto
+ *= require font-awesome
  */
 
  /*

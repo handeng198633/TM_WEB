@@ -1,57 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
-  
-  <%= csrf_meta_tags %>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jsbn.js"></script>
-	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/prng4.js"></script>
-	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/rng.js"></script>
-	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/rsa.js"></script>
-	<script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/base64.js"></script>
-    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/m.js"></script>
-    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
-    <script charset="UTF-8" language="JavaScript" type="text/javascript" src="/assets/jquery-migrate-1.2.1.js"></script>
+    <%= csrf_meta_tags %>
 
-    <title>忆游假期在线CMS | <%= yield(:title) %></title>
     <%= favicon_link_tag 'Globe.ico' %>
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <% if logged_in? %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <title>忆游假期在线CMS | <%= yield(:title) %></title>
 
-	<script id="dialog-message" type="text/x-handlebars-template">
-	   <div class="body box-b"> 
-         <div class="icon">
-     
-           </div>
-         <div class="context">
-      
-           </div> <br>
-         <div class="option">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <!--   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-           </div>
-        </div>
-    </script>
+    
+    <link rel="stylesheet" href="/assets/uniform.css" />
+    <link rel="stylesheet" href="/assets/select2.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="/assets/matrix-style.css" />
+    <link rel="stylesheet" href="/assets/matrix-media.css" />
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.css"  />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <% else %>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="/assets/matrix-login.css" />
+        <link href="/assets/font-awesome.css" rel="stylesheet" />
+        <style type="text/css">
+            input{
+                font-family: "Microsoft Yahei";
+            }
+            .control-label{
+                color: #B2DFEE;
+                padding-left: 4px;
+            }
+        </style>
+
+        <title>忆游假期在线CMS | <%= yield(:title) %></title>
+
+    <% end %>
+
 </head>
-  <body>
-	<div class="dialog-mark_content">
-           <a class="dialog-mark_close" title="关闭"> </a>
-           <div class="dialog-mark_content_cen" style="height:450px;overflow:auto;">
-            </div>
-           <div id="dialog-mark_content_opt">
-            </div> 
-    </div>
-    <div class="dialog-mark_overlay">
+
+  
+<% if logged_in? %> 
+   <body>
+
+
+    <div id="header">
+      <h1><a href="dashboard.html">信息管理系统平台</a></h1>
     </div>
 
 
-	<%= render 'layouts/nav' %>
-    
-	<%= yield %>
-    
+    <%= render 'layouts/header' %>
+
+    <%= render 'layouts/sidebar' %>
+
+  <div id="content">
+        <!--breadcrumbs-->
+        <div id="content-header">
+          <div id="breadcrumb"> <a href="/" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 主页</a></div>
+        </div>
+        <!--End-breadcrumbs-->
+        <iframe src="index2.html" id="iframe-main" frameborder='0' style="width:100%;"></iframe>
+  </div> 
+
+  <%= render 'layouts/footer' %>
+
+
+
+
+ 
+    <script src="/assets/jquery.uniform.js"></script> 
+    <script src="/assets/select2.min.js"></script> 
+    <script src="/assets/jquery.validate.js"></script> 
+    <script src="/assets/matrix.form_validation.js"></script> 
+    <script src="/assets/excanvas.min.js"></script> 
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/jquery.ui.custom.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/jquery.nicescroll.min.js"></script> 
+    <script src="/assets/matrix.js"></script> 
+    <script type="text/javascript">
+
+    //初始化相关元素高度
+    function init(){
+        $("body").height($(window).height()-80);
+        $("#iframe-main").height($(window).height()-90);
+        $("#sidebar").height($(window).height()-50);
+    }
+
+    $(function(){
+        init();
+        $(window).resize(function(){
+            init();
+        });
+    });
+
+    // This function is called from the pop-up menus to transfer to
+    // a different page. Ignore if the value returned is a null string:
+    function goPage (newURL) {
+        // if url is empty, skip the menu dividers and reset the menu selection to default
+        if (newURL != "") {
+            // if url is "-", it is this page -- reset the menu:
+            if (newURL == "-" ) {
+                resetMenu();            
+            } 
+            // else, send page to designated URL            
+            else {  
+                document.location.href = newURL;
+            }
+        }
+    }
+
+    // resets the menu selection upon entry to this page:
+    function resetMenu() {
+        document.gomenu.selector.selectedIndex = 2;
+    }
+
+    // uniform使用示例：
+    // $.uniform.update($(this).attr("checked", true));
+    </script>
+
+<% else %> 
 	
-	<%= render 'layouts/footer' %>
-<!--	<%= debug(params) if Rails.env.development? %> -->
+    <%= yield %>
+
+<% end %>
+
+<!--  <%= debug(params) if Rails.env.development? %> -->
+
 </body>
 </html>
+

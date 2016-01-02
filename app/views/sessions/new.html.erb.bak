@@ -1,0 +1,118 @@
+<% provide(:title, '主页') %>
+ 
+<% if logged_in? %>
+<div class="reg-page"></div>
+  <div class="home-box2">
+      <div class="m-div clear">
+  
+
+          <%= link_to packageorders_path, class: "block block1 fl" do %>
+              <img src="/assets/home-icon-block1.png" class="i">
+              <div class="title1">销售部门</div>
+              <div class="title2">供销售上传登记订单</div>
+          <% end %>
+
+  
+          <%= link_to traintickets_path, class: "block block2 fl" do %>
+              <img src="/assets/home-icon-block2.png" class="i">
+              <div class="title1">票务部门</div>
+              <div class="title2">登记线路上传记录</div>
+          <% end %>
+
+          <%= link_to finances_path, class: "block block3 fl" do %>
+              <img src="/assets/home-icon-block3.png" class="i">
+              <div class="title1">财务部门</div>
+              <div class="title2">供会计统计账目明细</div>
+           <% end %>
+      </div>
+  </div>
+
+<% else %>
+  <div class="home-box1">
+      <div class="banner home-banner">
+          <div class="banner-wp" style="width: 4033px; left: -1341px;">
+              <div class="slide" style="width: 1341px; background-image: url(/assets/bn1.jpg);"></div>
+              <div class="slide" style="width: 1341px; background-image: url(/assets/bn2.jpg);"></div>
+              <div class="slide" style="width: 1341px; background-image: url(/assets//bn3.jpg);"></div>
+          </div>
+          <div class="btns">
+              <a href="#" class="btn" data-i="0"></a>
+              <a href="#" class="btn btn-fire" data-i="1"></a>
+              <a href="#" class="btn" data-i="2"></a>
+          </div>
+      </div>
+
+  
+      <div class="m-div clear">
+          <div class="fl">
+              <span class="home-banner-txt home-banner-txt1" style="display: none;"></span>
+              <span class="home-banner-txt home-banner-txt2" style="display: none; opacity: 1;"></span>
+              <span class="home-banner-txt home-banner-txt3" style="display: none;"></span>
+          </div>
+
+          <div id="login-form-div" class="fr">
+              <div class="home-login">
+                  <div class="bg"></div>
+                  <div class="body">
+                    <div class="title">忆游登录</div>
+                      <% flash.each do |key, value| %>
+                         <div class="alert alert-<%= key %>"><%= value %></div>
+                         <% end %>
+                         <%= form_for(:session, url: login_path) do |f| %>
+
+                         <%= f.text_field :name, class: 'form-control', placeholder: "用户名" %>
+
+                         <%= f.password_field :password, class: 'form-control', placeholder: "密码" %>
+
+                         <%= f.label :remember_me, class: "checkbox inline" do %>
+                         <%= f.check_box :remember_me %>
+                        <span>自动登录</span>
+                         <% end %> 
+                      <div class="clear link-line">
+                          <label class="fl"
+                            <br />如忘记密码请跟管理员联系</label>
+                      </div>
+
+                      <%= f.submit "登 录", class: "login-btn" %>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+ 
+  <div class="home-box2">
+    <div class="m-div clear">
+    </div>
+  </div>
+
+  <div class="home-box3">
+      <div class="banner">
+          <div class="banner-wd">
+              <div class="slide clear" style="width: 1341px;">
+                  <div class="m-div clear">
+                      <div class="fl">
+                          <div class="title">CULTURE</div>
+                          <div class="desc">
+                              <p>中青旅忆游假期
+                          </p></div>
+                      </div>
+                      <div class="fr">
+                          <img src="/assets/b-banner-img.png">
+                      </div>
+                  </div>
+              </div>
+                <div class="btns">
+            <div class="m-div">
+              
+              </div>
+            </div>
+          </div>
+          
+      </div>
+  </div>
+
+          
+
+
+<% end %>

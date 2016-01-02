@@ -1,118 +1,58 @@
 <% provide(:title, '主页') %>
  
 <% if logged_in? %>
-<div class="reg-page"></div>
-  <div class="home-box2">
-      <div class="m-div clear">
   
-
-          <%= link_to packageorders_path, class: "block block1 fl" do %>
-              <img src="/assets/home-icon-block1.png" class="i">
-              <div class="title1">销售部门</div>
-              <div class="title2">供销售上传登记订单</div>
-          <% end %>
-
-  
-          <%= link_to traintickets_path, class: "block block2 fl" do %>
-              <img src="/assets/home-icon-block2.png" class="i">
-              <div class="title1">票务部门</div>
-              <div class="title2">登记线路上传记录</div>
-          <% end %>
-
-          <%= link_to finances_path, class: "block block3 fl" do %>
-              <img src="/assets/home-icon-block3.png" class="i">
-              <div class="title1">财务部门</div>
-              <div class="title2">供会计统计账目明细</div>
-           <% end %>
-      </div>
-  </div>
 
 <% else %>
-  <div class="home-box1">
-      <div class="banner home-banner">
-          <div class="banner-wp" style="width: 4033px; left: -1341px;">
-              <div class="slide" style="width: 1341px; background-image: url(/assets/bn1.jpg);"></div>
-              <div class="slide" style="width: 1341px; background-image: url(/assets/bn2.jpg);"></div>
-              <div class="slide" style="width: 1341px; background-image: url(/assets//bn3.jpg);"></div>
-          </div>
-          <div class="btns">
-              <a href="#" class="btn" data-i="0"></a>
-              <a href="#" class="btn btn-fire" data-i="1"></a>
-              <a href="#" class="btn" data-i="2"></a>
-          </div>
-      </div>
 
-  
-      <div class="m-div clear">
-          <div class="fl">
-              <span class="home-banner-txt home-banner-txt1" style="display: none;"></span>
-              <span class="home-banner-txt home-banner-txt2" style="display: none; opacity: 1;"></span>
-              <span class="home-banner-txt home-banner-txt3" style="display: none;"></span>
-          </div>
+      <body>
+          <div id="loginbox">  
+              <div class="control-group normal_text"> 
+                  <h2 style="color:#B2DFEE;font-size:28px;">亿游信息管理系统</h2>
+                  <span style="font-size:14px;color:gray;">版权所有 亿游在线 2015-2016</span>
+              </div>          
+                  <% flash.each do |key, value| %>
+                      <div class="alert alert-<%= key %>"><%= value %></div>
+                  <% end %>
 
-          <div id="login-form-div" class="fr">
-              <div class="home-login">
-                  <div class="bg"></div>
-                  <div class="body">
-                    <div class="title">忆游登录</div>
-                      <% flash.each do |key, value| %>
-                         <div class="alert alert-<%= key %>"><%= value %></div>
-                         <% end %>
-                         <%= form_for(:session, url: login_path) do |f| %>
+              <%= form_for(:session, url: login_path, id: "loginform", class: "form-vertical" ) do |f| %>
+                              <div class="control-group">
+                                  <label class="control-label">登陆账号</label>
+                                  <div class="controls">
+                                    <div class="main_input_box">
+                                      <span class="add-on bg_lg">
+                                        <i class="icon-user" style="font-size:16px;">
+                                        </i>
+                                      </span>
+                                        <%= f.text_field :name, placeholder: "帐号" %>
+                                    </div>
+                                  </div>
+                              <div>i
 
-                         <%= f.text_field :name, class: 'form-control', placeholder: "用户名" %>
+                              <div class="control-group2">
+                                <label class="control-label">登陆密码</label>
+                                <div class="controls">
+                                    <div class="main_input_box">
+                                    <span class="add-on bg_ly"><i class="icon-lock" style="font-size:16px;"></i></span>
+                                      <%= f.password_field :password, placeholder: "密码" %>
+                                 </div>
+                              </div>
+                             </div>
+                                 <%= f.label :remember_me, class: "checkbox inline" do %>
+                                   <%= f.check_box :remember_me %>
+                                  <span>自动登录</span>
+                                 <% end %>
 
-                         <%= f.password_field :password, class: 'form-control', placeholder: "密码" %>
+                                 <span class="pull-right">
+                                  <%= f.submit " 登        录", class: "btn btn-success", style: "width:335px;", id: "checkBtn" %>
+                                 </span>
+                              <div class="control-group normal_text">
+                                <div style="font-size:14px;color:gray;">推荐使用webkit内核浏览器，如chrome等</div>
+                              </div>
+              <% end %>
 
-                         <%= f.label :remember_me, class: "checkbox inline" do %>
-                         <%= f.check_box :remember_me %>
-                        <span>自动登录</span>
-                         <% end %> 
-                      <div class="clear link-line">
-                          <label class="fl"
-                            <br />如忘记密码请跟管理员联系</label>
-                      </div>
-
-                      <%= f.submit "登 录", class: "login-btn" %>
-                      <% end %>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
- 
-  <div class="home-box2">
-    <div class="m-div clear">
-    </div>
-  </div>
-
-  <div class="home-box3">
-      <div class="banner">
-          <div class="banner-wd">
-              <div class="slide clear" style="width: 1341px;">
-                  <div class="m-div clear">
-                      <div class="fl">
-                          <div class="title">CULTURE</div>
-                          <div class="desc">
-                              <p>中青旅忆游假期
-                          </p></div>
-                      </div>
-                      <div class="fr">
-                          <img src="/assets/b-banner-img.png">
-                      </div>
-                  </div>
-              </div>
-                <div class="btns">
-            <div class="m-div">
-              
-              </div>
-            </div>
           </div>
           
-      </div>
-  </div>
-
-          
-
-
+          <script src="/assets/jquery.min.js"></script>  
+          <script src="/assets/matrix.login.js"></script> 
 <% end %>
