@@ -1,28 +1,22 @@
 <% provide(:title, '主页') %>
  
 <% if logged_in? %>
-<div class="reg-page"></div>
   <div class="home-box2">
       <div class="m-div clear">
-  
-
           <%= link_to packageorders_path, class: "block block1 fl" do %>
               <img src="/assets/home-icon-block1.png" class="i">
               <div class="title1">销售部门</div>
-              <div class="title2">供销售上传登记订单</div>
           <% end %>
 
   
           <%= link_to traintickets_path, class: "block block2 fl" do %>
               <img src="/assets/home-icon-block2.png" class="i">
               <div class="title1">票务部门</div>
-              <div class="title2">登记线路上传记录</div>
           <% end %>
 
           <%= link_to finances_path, class: "block block3 fl" do %>
               <img src="/assets/home-icon-block3.png" class="i">
               <div class="title1">财务部门</div>
-              <div class="title2">供会计统计账目明细</div>
            <% end %>
       </div>
   </div>

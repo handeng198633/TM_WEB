@@ -175,7 +175,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
   execjs
-  font-awesome-sass
+  font-awesome-sass (= 4.5.0)
   i18n
   jbuilder (~> 2.0)
   jquery-datatables-rails (~> 3.3.0)

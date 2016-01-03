@@ -18,11 +18,11 @@
 <div id="content">
   <div  class="quick-actions_homepage">
     <ul class="quick-actions">
-      <li class="bg_lb"> <a href="#"> <i class="icon-dashboard"></i> My Dashboard </a> </li>
-      <li class="bg_lg"> <a href="#"> <i class="icon-shopping-cart"></i> Shopping Cart</a> </li>
-      <li class="bg_ly"> <a href="#"> <i class=" icon-globe"></i> Web Marketing </a> </li>
-      <li class="bg_lo"> <a href="#"> <i class="icon-group"></i> Manage Users </a> </li>
-      <li class="bg_ls"> <a href="#"> <i class="icon-signal"></i> Check Statistics</a> </li>
+      <li class="bg_lb"> <a href='/packageorders'> <i class="icon-dashboard"></i> 包团订单</a> </li>
+      <li class="bg_lg"> <a href="#"> <i class="icon-shopping-cart"></i> 散客订单</a> </li>
+      <li class="bg_ly"> <a href="#"> <i class=" icon-globe"></i>旅游线路</a> </li>
+      <li class="bg_lo"> <a href="#"> <i class="icon-group"></i> 飞机票订单</a> </li>
+      <li class="bg_ls"> <a href="#"> <i class="icon-signal"></i> 火车票订单</a> </li>
     </ul>
   </div>
   <div class="container-fluid">
@@ -35,19 +35,19 @@
           <div class="widget-content nopadding collapse in" id="collapseG2">
             <ul class="recent-posts">
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/img/demo/av1.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/img/demo/av2.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="/assets/img/demo/av4.jpg"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av4.jpg"> </div>
                 <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
                   <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
                 </div>
@@ -202,6 +202,29 @@
 <script src="/assets/jquery.dataTables.min.js"></script> 
 <script src="/assets/matrix.tables.js"></script> 
 <script src="/assets/matrix.interface.js"></script> 
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
 
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
 </body>
 </html>

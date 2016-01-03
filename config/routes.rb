@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   resources :planetickets
   resources :finances
 
-  get 'fontawesome-webfont' => '/public/font-awesome/font/fontawesome-webfont.eot'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

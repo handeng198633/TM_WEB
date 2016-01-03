@@ -1,5 +1,5 @@
 <div id="user-nav" class="navbar navbar-inverse">
-        <ul class="nav">
+    <ul class="nav">
         <% if logged_in? && current_user.id == 1 %>
             <li  class="" id="profile-messages" >
                 <a>
@@ -8,7 +8,7 @@
                 </a>
                 <li class="">
                     <%= link_to '/signup' do %>
-                        <i class="icon icon-cog"></i> 
+                        <i class="icon icon-key"></i> 
                         <span class="text">&nbsp;注册</span>
                     <% end %>
                 </li>
@@ -19,13 +19,12 @@
                     <% end %>
                 </li>
                 <li class="">
-                    <%= link_to logout_path, method: "delete" do %>
-                     <i class="icon icon-key"></i> 
+                    <%= link_to logout_path, method: "delete", confirm: "确定退出?"  do %>
+                     <i class="icon icon-share-alt"></i> 
                      <span class="">&nbsp;退出</span>
                     <% end %>
                 </li>
-
-          </li>
+            </li>
                 
         <% elsif logged_in? %>
             <li  class="" id="profile-messages" >
@@ -40,8 +39,8 @@
                     <% end %>
                 </li>
                 <li class="">
-                    <%= link_to logout_path, method: "delete" do %>
-                     <i class="icon icon-key"></i> 
+                    <%= link_to logout_path, method: "delete", confirm: "确定退出?"  do %>
+                     <i class="icon icon-share-alt"></i> 
                      <span class="">&nbsp;退出</span>
                     <% end %>
                 </li>

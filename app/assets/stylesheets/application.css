@@ -11,18 +11,13 @@
  * file per style scope.
  *
  *= require jquery-ui
- *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
 
  * head css
- *= require index
  *= require simple_calendar
  *= require bootstrap.min
  *= require bootstrap-responsive.min
- *= require matrix-style
  *= require matrix-media
- *= require font-awesome
- *= require prettyPhoto
  *= require font-awesome
  */
 

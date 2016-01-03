@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+element {
+    height: 0px;
+}
 
 .navbar-form {
     width: auto;
