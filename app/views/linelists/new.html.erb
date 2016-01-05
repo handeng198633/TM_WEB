@@ -1,43 +1,93 @@
 <% provide(:title, "新增旅游线路") %>
 
-<h1>旅游线路信息</h1>
+<div id="content">
+  <div id="content-header">
+      <h1>旅游线路信息</h1>
+  </div>
+  <div class="container-fluid">
+  	  <div class="row-fluid">
+	  	  		<div class="span6">
+	  	  			<div class="widget-box">
+	  	  				<div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          					<h5>请依次输入具体信息</h5>
+        				</div>
+        				<div class="widget-content">
+        					<%= form_for(Linelist.new,  :html => { :multipart => true } ) do |f| %>
+        						<%= render 'shared/error_messages', object: f.object %>
+	        						<div class="control-group">
+	              						<%= f.label :group_number, "团号:" %>
+	              						<div class="controls">
+	                							<%= f.text_field :group_number, placeholder: "请输入团号。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-<div class="row">
+	            					<div class="control-group">
+	              						<%= f.label :day, "天数" %>
+	              						<div class="controls">
+	                							<%= f.number_field(:day, in: 0.0..1000.0, step: 1.0 ) %>
+												<span class="add-on">天</span>	                							
+	              						</div>
+	            					</div>
 
-		<div class="col-md-4 col-md-offset-4">
-		<%= form_for(Linelist.new,  :html => { :multipart => true } ) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+	            					<div class="control-group">
+	              						<%= f.label :linename, "线路编号" %>
+	              						<div class="controls">
+	                							<%= f.text_field :linename, placeholder: "请输入线路编号。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-			<%= f.label :group_number, "团号" %>
-		   	<%= f.text_field :group_number, placeholder: "请输入团号。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :line_info, "线路信息" %>
+	              						<div class="controls">
+	                							<%= f.text_field :line_info, placeholder: "请输入线路具体信息。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :day, "天数" %>
-		   	<%= f.number_field(:day, in: 0.0..1000.0, step: 1.0 ) %>
+	            					<div class="control-group">
+	              						<%= f.label :travel_content, "行程" %>
+	              						<div class="controls">
+	                							<%= f.text_field :travel_content, placeholder: "请输入行程。。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		    <%= f.label :linename, "线路编号" %>
-		   	<%= f.text_field :linename, placeholder: "请输入线路编号。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :picture, "主配图"  %>
+	              						<div class="controls">
+	                							<%= f.file_field :picture %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :line_info, "线路信息" %>
-		   	<%= f.text_field :line_info, placeholder: "请输入线路具体信息。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :document, "文档"  %>
+	              						<div class="controls">
+	                							<%= f.file_field :document %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :travel_content, "行程（可编辑）" %>
-		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :price, "价格发布" %>
+	              						<div class="controls">
+	                							<%= f.number_field(:price, in: 0.0..100000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :picture, "主配图" %>
-		   	<%= f.file_field :picture %>
+	            					<div class="control-group">
+	            						<%= f.label :selling_ornot, "销售中" %>
+	            						<div class="controls span6">
+	            							<%= f.select(:selling_ornot, [['是', true ], ['否', false ]]) %>
+	            						</div>
+	            					</div>
 
-		   	<%= f.label :document, "文档" %>
-		   	<%= f.file_field :document %>
+	            					<div class="control-group">
+	              						<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-large btn-primary" %>
+										<%= link_to "退出", packageorders_path, class: "btn btn-large btn-primary" %>
+	            					</div>	            					
 
-		   	<%= f.label :price, "价格发布" %>
-		   	<%= f.number_field(:price, in: 0.0..100000.0, step: 1.0 ) %>
-
-		   	<%= f.label :selling_ornot, "销售中" %>
-		   	<%= f.select(:selling_ornot, [['是', true ], ['否', false ]]) %>
-			
-			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
-			<%= link_to "退出", linelists_path, class: "btn btn-primary" %>
-		<% end %>
-
-	</div>
+        					<% end %>
+        				</div>
+	  	  			</div>
+	  	  		</div>
+  	  </div>
+  </div>
 </div>

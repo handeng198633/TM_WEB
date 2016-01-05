@@ -1,47 +1,47 @@
+<% provide(:title, "包团订单") %>
 
-
-<html lang="en">
-  <%= render 'shared/header2' %>
-<body>
-
-<div id="content">
-    <div class="container-fluid">
-        <h1>包团订单</h1>
+<div id="content-header">
+  <h1>包团订单</h1>
+</div>
+<div class="container-fluid">
         <div class="row-fluid">
-              <%= link_to "新增", new_packageorder_path, class: "btn btn-large btn-primary" %>
-                  <div class="span12">
-                      <table id="packageorders" class="display" data-source="<%= packageorders_url(:format => "json") %>">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>团号</th>
-                              <th>出发日期</th>
-                              <th>地接日期</th>
-                              <th>组团社</th>
-                              <th>客人名单/人数</th>
-                              <th>行程</th>
-                              <th>合同价|结算价</th>
-                              <th>西藏报价|结算价</th>
-                              <th>去大交通</th>
-                              <th>回大交通</th>
-                              <th>成都成本</th>
-                              <th>已成团</th>
-                              <th>销售</th>
-                              <th>操作</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                      </table>
+            <div class="span12">
+              <div class="widget-box">
+                  <div class="widget-title"> <span class="icon"> <i class="icon-briefcase"></i> </span>
+                    <%= link_to "新增", new_packageorder_path, class: "btn btn-primary" %>
                   </div>
+                    <div class="widget-content">
+                        <div class="row-fluid">
+                              <table id="packageorders" class="display" data-source="<%= packageorders_url(:format => "json") %>">
+                                  <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>团号</th>
+                                      <th>出发日期</th>
+                                      <th>地接日期</th>
+                                      <th>组团社</th>
+                                      <th>客人名单/人数</th>
+                                      <th>行程</th>
+                                      <th>合同价|结算价</th>
+                                      <th>西藏报价|结算价</th>
+                                      <th>去大交通</th>
+                                      <th>回大交通</th>
+                                      <th>成都成本</th>
+                                      <th>已成团</th>
+                                      <th>销售</th>
+                                      <th>操作</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  </tbody>
+                              </table>
+                        </div>
+                    </div>
+              </div>
+            </div>
         </div>
-
 </div>
-</div>
-  <%= render 'shared/footer2' %>
 
-</body>
-</html>
 
 
 

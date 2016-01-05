@@ -1020,7 +1020,7 @@ div.dataTables_wrapper .ui-widget-header {
 	opacity: 1; color:#fff; top:50%; transition:1s ease-out;
 }
 .line {
-	background: url("/assets/line.png") repeat-x scroll 0 0 transparent;
+	background: url("../img/line.png") repeat-x scroll 0 0 transparent;
 	display: block;
 	height: 8px;
 }
@@ -1345,7 +1345,7 @@ form {
 		font-size:12px;
 	}
 	#sidebar > ul li a i {
-		background-image: url("/assets/glyphicons-halflings-white.png");
+		background-image: url("../img/glyphicons-halflings-white.png");
 		margin-top:4px;
 		vertical-align: top;
 	}

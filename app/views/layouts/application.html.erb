@@ -13,20 +13,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->   
-        <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>  
+<!--        <link rel="stylesheet" href="/assets/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="/assets/matrix-style.css" />
-        <link rel="stylesheet" href="/assets/matrix-media.css" />
-        <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link rel="stylesheet" href="/assets/fullcalendar.css" />
         <link rel="stylesheet" href="/assets/jquery.gritter.css" />
-    <!-- <link rel="stylesheet" href="css/matrix-style2.css" />-->
-        <link rel="stylesheet" href="/assets/matrix-media.css" />
+        <link rel="stylesheet" href="/assets/matrix-media.css" />-->
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
         <link href='/assets/font.css' rel='stylesheet' type='text/css'>
 
-    <!--<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
     <% else %>
         <meta charset="UTF-8" />
@@ -68,7 +65,7 @@
 
     <!-- end of sidebar-menu -->
 
-      <div id="content">
+    <div id="content">
             <!--breadcrumbs-->
             <div id="content-header">
                     <div id="breadcrumb"> 
@@ -85,40 +82,27 @@
             </div>
             <div id="iframe-main" frameborder='0' style="width:100%;">
                     <div id="content2">
-                        <div  class="quick-actions_homepage">
-                            <ul class="quick-actions">
-                                <li class="bg_lb"> <a href="/packageorders"> <i class="icon-dashboard"></i> 包团订单</a> </li>
-                                <li class="bg_lg"> <a href="/fitorders"> <i class="icon-shopping-cart"></i> 散客订单</a> </li>
-                                <li class="bg_ly"> <a href="/linelists"> <i class=" icon-globe"></i>旅游线路</a> </li>
-                                <li class="bg_lo"> <a href="/planetickets"> <i class="icon-group"></i> 飞机票订单</a> </li>
-                                <li class="bg_ls"> <a href="/traintickets"> <i class="icon-signal"></i> 火车票订单</a> </li>
-                            </ul>
-                        </div>
-
-                        <div class="container-fluid">
-                            <div class="row-fluid">
-                                <div class="span6">Span1</div>
-                                <div class="span6">Span2</div>
-                                <hr>
-                            </div>
-                            <div class="row-fluid">
-                                  <div class="span12">Span3</div>
-                            </div>
-                        </div>
+                        <%= yield %>
                     </div>
-            </div> 
+            </div>
+    </div> 
 
     <!--<%= render 'layouts/footer' %>-->
             <script src="/assets/excanvas.min.js"></script> 
             <script src="/assets/jquery.min.js"></script> 
             <script src="/assets/jquery.ui.custom.js"></script> 
             <script src="/assets/bootstrap.min.js"></script> 
+            <script src="/assets/bootstrap-datepicker.js"></script>            
             <script src="/assets/jquery.nicescroll.min.js"></script> 
             <script src="/assets/matrix.js"></script>
             <script src="/assets/jquery.flot.min.js"></script> 
             <script src="/assets/jquery.flot.resize.min.js"></script> 
             <script src="/assets/jquery.peity.min.js"></script> 
-            <script src="/assets/jquery.gritter.min.js"></script>  
+            <script src="/assets/jquery.gritter.min.js"></script> 
+            <script src="/assets/jquery.toggle.buttons.html"></script> 
+            <script src="/assets/masked.js"></script>
+            <script src="/assets/matrix.form_common.js"></script> 
+            <script src="/assets/wysihtml5-0.3.0.js"></script>            
             <script src="/assets/fullcalendar.min.js"></script> 
             <script src="/assets/matrix.calendar.js"></script> 
             <script src="/assets/matrix.chat.js"></script> 
@@ -130,7 +114,8 @@
             <script src="/assets/matrix.popover.js"></script> 
             <script src="/assets/jquery.dataTables.min.js"></script> 
             <script src="/assets/matrix.tables.js"></script> 
-            <script src="/assets/matrix.interface.js"></script>     
+            <script src="/assets/matrix.interface.js"></script>
+            <script src="/assets/bootstrap-wysihtml5.js"></script>    
     <script type="text/javascript">
         //初始化相关元素高度
         function init(){

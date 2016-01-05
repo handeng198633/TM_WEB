@@ -1,54 +1,128 @@
 <% provide(:title, "新增包团订单") %>
 
-<h1>订单信息</h1>
+<div id="content">
+  <div id="content-header">
+      <h1>订单信息</h1>
+  </div>
+  <div class="container-fluid">
+  	  <div class="row-fluid">
+	  	  		<div class="span6">
+	  	  			<div class="widget-box">
+	  	  				<div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          					<h5>请依次输入具体信息</h5>
+        				</div>
+        				<div class="widget-content">
+        					<%= form_for(Packageorder.new) do |f| %>
+        						<%= render 'shared/error_messages', object: f.object %>
+	        						<div class="control-group">
+	              						<%= f.label :group_number, "团号:" %>
+	              						<div class="controls">
+	                							<%= f.text_field :group_number, placeholder: "请输入团号。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-<div class="row">
+	        						<div class="control-group">
+	              						<%= f.label :outdate, "出发日期" %>
+	              						<div class="controlsq">
+	              							<div class="input-append date datepicker">
+	                							<%= f.date_field :outdate %>
+	                						</div>
+	              						</div>
 
-		<div class="col-md-4 col-md-offset-4">
-		<%= form_for(Packageorder.new) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+	              						<%= f.label :returndate, "地接日期" %>
+	              						<div class="controls">
+	              							<div class="input-append date datepicker">
+	                							<%= f.date_field :returndate %>
+	                						</div>
+	              						</div>
+	            					</div>
 
-			<%= f.label :group_number, "团号" %>
-		   	<%= f.text_field :group_number, placeholder: "请输入团号。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :travel_agency, "组团社:" %>
+	              						<div class="controls">
+	                							<%= f.text_field :travel_agency, placeholder: "请输入组团社名称。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :outdate, "出发日期" %>
-		    <%= f.date_field :outdate %>
+	            					<div class="control-group">
+	              						<%= f.label :person_list, "客人名单|人数:" %>
+	              						<div class="controls">
+	                							<%= f.text_field :person_list, placeholder: "请输入人数。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		    <%= f.label :returndate, "地接日期" %>
-		    <%= f.date_field :returndate %>
+	            					<div class="control-group">
+	              						<%= f.label :travel_content, "行程:" %>
+	              						<div class="controls">
+	                							<%= f.text_field :travel_content, placeholder: "请输入行程。。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		    <%= f.label :travel_agency, "组团社" %>
-		   	<%= f.text_field :travel_agency, placeholder: "请输入组团社名称。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :price1, "合同价|结算价|西藏报价|结算价" %>
+	              						<div class="controls">
+	                							<%= f.number_field(:price1, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	              						<div class="controls">
+	                							<%= f.number_field(:price2, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	              						<div class="controls">
+	                							<%= f.number_field(:price3, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	              						<div class="controls">
+	                							<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :person_list, "客人名单|人数" %>
-		   	<%= f.text_field :person_list, placeholder: "请输入客人名单和人数。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :out_tracffic, "去大交通" %>
+	              						<div class="controls span6">
+	                							<%= f.select(:out_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
+	              						</div>
+	              						<div class="controls">
+	              								<%= f.text_field :out_tracffic, placeholder: "出发城市-到达城市。。。" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :travel_content, "行程（可编辑）" %>
-		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :return_tracffic, "去大交通" %>
+	              						<div class="controls span6">
+	                							<%= f.select(:return_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
+	              						</div>
+	              						<div class="controls">
+	              								<%= f.text_field :return_tracffic, placeholder: "出发城市-到达城市。。。" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :price1, "合同价|结算价|西藏报价|结算价" %>
-		   	<%= f.number_field(:price1, in: 0.0..1000000.0, step: 1.0 ) %>
-		   	<%= f.number_field(:price2, in: 0.0..1000000.0, step: 1.0 ) %>
-		   	<%= f.number_field(:price3, in: 0.0..1000000.0, step: 1.0 ) %>
-		   	<%= f.number_field(:price4, in: 0.0..1000000.0, step: 1.0 ) %>
+	            					<div class="control-group">
+	              						<%= f.label :cost, "成都成本" %>
+	              						<div class="controls">
+	                							<%= f.number_field(:cost, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>	                							
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :out_tracffic, "去大交通" %>
-		   	<%= f.select(:out_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
-		   	<%= f.text_field :out_tracffic, placeholder: "出发城市-到达城市。。。" %>
+	            					<div class="control-group">
+	            						<%= f.label :package_ornot, "已成团" %>
+	            						<div class="controls span6">
+	            							<%= f.select(:package_ornot, [['是', true], ['否', false ]]) %>
+	            						</div>
+	            					</div>
 
-		   	<%= f.label :return_tracffic, "回大交通" %>
-		   	<%= f.select(:return_tracffic_way, [['飞机', '飞机'], ['火车', '火车'], ['汽车', '汽车'], ['轮船', '轮船'], ['其它', '其它']]) %>
-		   	<%= f.text_field :return_tracffic, placeholder: "出发城市-到达城市。。。" %>
+	            					<div class="control-group">
+	              						<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-large btn-primary" %>
+										<%= link_to "退出", packageorders_path, class: "btn btn-large btn-primary" %>
+	            					</div>	            					
 
-		   	<%= f.label :cost, "成都成本" %>
-		   	<%= f.number_field(:cost, in: 0.0..1000000.0, step: 1.0 ) %>
-
-		   	<%= f.label :package_ornot, "已成团" %>
-		   	<%= f.select(:package_ornot, [['是', true], ['否', false ]]) %>
-			
-			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
-			<%= link_to "退出", packageorders_path, class: "btn btn-primary" %>
-		<% end %>
-
-	</div>
+        					<% end %>
+        				</div>
+	  	  			</div>
+	  	  		</div>
+  	  </div>
+  </div>
 </div>
+

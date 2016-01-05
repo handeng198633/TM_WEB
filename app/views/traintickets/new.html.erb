@@ -1,67 +1,144 @@
-<% provide(:title, "火车票订单") %>
+<% provide(:title, "新建火车票订单") %>
 
-<h1>新建火车票订单</h1>
+<div id="content">
+  <div id="content-header">
+      <h1>火车票订单</h1>
+  </div>
+  <div class="container-fluid">
+  	  <div class="row-fluid">
+	  	  		<div class="span6">
+	  	  			<div class="widget-box">
+	  	  				<div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          					<h5>请依次输入具体信息</h5>
+        				</div>
+        				<div class="widget-content">
+        					<%= form_for(Trainticket.new) do |f| %>
+        						<%= render 'shared/error_messages', object: f.object %>
+	        						<div class="control-group">
+	              						<%= f.label :category, "类别" %>
+	              						<div class="controls">
+	                							<%= f.text_field :category, placeholder: "请输入类别。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-<div class="row">
+	            					<div class="control-group">
+	              						<%= f.label :order_id, "订单ID" %>
+	              						<div class="controls">
+	                							<%= f.text_field :order_id, placeholder: "请输入订单ID。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		<div class="col-md-4 col-md-offset-4">
-		<%= form_for(Trainticket.new) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+	            					<div class="control-group">
+	              						<%= f.label :number, "小团号" %>
+	              						<div class="controls">
+	                							<%= f.text_field :number, placeholder: "请输入小团号。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-			<%= f.label :category, "类别" %>
-		   	<%= f.text_field :category, placeholder: "请输入类别。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :outdate, "出发日期" %>
+	              						<div class="controlsq">
+	              							<div class="input-append date datepicker">
+	                							<%= f.date_field :outdate %>
+	                						</div>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :order_id, "订单ID" %>
-		   	<%= f.text_field :order_id, placeholder: "请输入订单ID。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :travel_content, "行程" %>
+	              						<div class="controls">
+	                							<%= f.text_field :travel_content, placeholder: "请输入行程。。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :number, "小团号" %>
-		   	<%= f.text_field :number, placeholder: "请输入小团号。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :combined_transport, "联运" %>
+	              						<div class="controls">
+	                							<%= f.text_field :combined_transport, placeholder: "联运信息。。。",class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :outdate, "出发日期" %>
-		    <%= f.date_field :outdate %>
+	            					<div class="control-group">
+	              						<%= f.label :place, "出票地" %>
+	              						<div class="controls">
+	                							<%= f.text_field :place, placeholder: "火车票出票地信息。。。",class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :travel_content, "行程（可编辑）" %>
-		   	<%= f.text_field :travel_content, placeholder: "请输入行程。。。" %>
+	            					<div class="control-group">
+	              						<%= f.label :person_name, "游客信息" %>
+	              						<div class="controls">
+	                					<%= f.text_field :person_name, placeholder: "姓名",class: "span5" %>
+	              						</div>
+	              						<div class="controls">
+	                					<%= f.text_field :person_idcard, placeholder: "身份证号码",class: "span5" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :combined_transport, "联运" %>
-		   	<%= f.text_field :combined_transport %>
+	            					<div class="control-group">
+	              						<%= f.label :ticket_cost, "票面" %>
+	              						<div class="controls">
+	                							<%= f.number_field(:ticket_cost, in: 0.0..1000000.0, step: 1.0 ) %>
+												<span class="add-on">RMB</span>
 
-		   	<%= f.label :place, "出票地" %>
-		   	<%= f.text_field :place %>
+										</div>
+	            					</div>
 
-		   	<%= f.label :person_name, "游客姓名" %>
-		   	<%= f.text_field :person_name %>
+	            					<div class="control-group">
+	              						<%= f.label :difficulty, "难度" %>
+	              						<div class="controls">
+	                							<%= f.text_field :difficulty, placeholder: "难易程度。。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :person_idcard, "身份证号码" %>
-		   	<%= f.text_field :person_idcard %>
+	            					<div class="control-group">
+	              						<%= f.label :seat1, "座位信息" %>
+	              						<div class="controls">
+	                					<%= f.text_field :seat1, placeholder: "座位1",class: "span5" %>
+	              						</div>
+	              						<div class="controls">
+	                					<%= f.text_field :seat2, placeholder: "座位2",class: "span5" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :ticket_cost, "票面" %>
-		   	<%= f.number_field(:ticket_cost, in: 0.0..1000000.0, step: 1.0 ) %>
+	            					<div class="control-group">
+	              						<%= f.label :remark, "备注" %>
+	              						<div class="controls">
+	                							<%= f.text_field :remark, placeholder: "备注信息。。。", class: "span11" %>
+	              						</div>
+	            					</div>
 
-		   	<%= f.label :difficulty, "难度" %>
-		   	<%= f.text_field :difficulty %>	
+	            					<div class="control-group">
+	              						<%= f.label :record_remark, "报票备注" %>
+	              						<div class="controls">
+	                							<%= f.text_field :record_remark, placeholder: "报票备注信息。。。", class: "span11" %>
+	              						</div>
+	            					</div>
+									<div class="control-group">
+	            						<%= f.label :state, "票况" %>
+	            						<div class="controls">
+	            							<%= f.select(:state, [['Yes', true ], ['No', false ]]) %>
+	            						</div>
+	            					</div>
 
-		   	<%= f.label :seat1, "座位1" %>
-		   	<%= f.text_field :seat1 %>	
+	            					<div class="control-group">
+	            						<%= f.label :state_step, "具体状态" %>
+	            						<div class="controls span6">
+	            							<%= f.select(:state_step, [['已发', '已发'], ['已出', '已出'], ['已取', '已取'], ['已退', '已退']]) %>
+	            						</div>
+	            					</div>
 
-		   	<%= f.label :seat2, "座位2" %>
-		   	<%= f.text_field :seat2 %>	
 
-		   	<%= f.label :remark, "备注" %>
-		   	<%= f.text_field :remark %>
 
-		   	<%= f.label :record_remark, "报票备注" %>
-		   	<%= f.text_field :record_remark %>
+	            					<div class="control-group">
+	              						<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-large btn-primary" %>
+										<%= link_to "退出", packageorders_path, class: "btn btn-large btn-primary" %>
+	            					</div>	            					
 
-		   	<%= f.label :state, "票况" %>
-		   	<%= f.select(:state, [['Yes', true ], ['No', false ]]) %>
-
-		   	<%= f.label :state_step, "具体状态" %>
-		   	<%= f.select(:state_step, [['已发', '已发'], ['已出', '已出'], ['已取', '已取'], ['已退', '已退']]) %>
-			
-			<%= f.submit "保存", data: { confirm: "确定？" }, class: "btn btn-primary" %>
-			<%= link_to "退出", traintickets_path, class: "btn btn-primary" %>
-		<% end %>
-
-	</div>
+        					<% end %>
+        				</div>
+	  	  			</div>
+	  	  		</div>
+  	  </div>
+  </div>
 </div>

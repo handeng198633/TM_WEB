@@ -12,16 +12,23 @@
  *
  *= require jquery-ui
  *= require_self
-
- * head css
  *= require simple_calendar
+ *= require dataTables/src/demo_table_jui
+ * head css
+
  *= require bootstrap.min
  *= require bootstrap-responsive.min
+ *= require uniform
+ *= require	select2
  *= require matrix-media
- *= require font-awesome
+ *= require matrix-style2
+ *= require fullcalendar
+ *= require jquery.gritter
+ *= require datepicker
+ *= require bootstrap-wysihtml5
  */
 
  /*
- *= require dataTables/src/demo_table_jui
+
 */
 
