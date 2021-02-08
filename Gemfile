@@ -45,7 +45,7 @@ gem 'jquery-ui-rails', '5.0.5'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'carrierwave', '0.10.0'
+gem 'carrierwave', '1.3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'execjs'
